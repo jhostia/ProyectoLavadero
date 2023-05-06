@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Enti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grafica", "Grafica\Grafica.csproj", "{B5B5E4FE-BEDF-4C3C-BCC1-85D0E8B61314}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj", "{55418DDD-2060-4914-B3BC-43EEEF9B52CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logica", "Logica\Logica.csproj", "{EF718267-F9B8-4D51-B92C-58F38AB97FE6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{B5B5E4FE-BEDF-4C3C-BCC1-85D0E8B61314}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5B5E4FE-BEDF-4C3C-BCC1-85D0E8B61314}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5B5E4FE-BEDF-4C3C-BCC1-85D0E8B61314}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55418DDD-2060-4914-B3BC-43EEEF9B52CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55418DDD-2060-4914-B3BC-43EEEF9B52CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55418DDD-2060-4914-B3BC-43EEEF9B52CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55418DDD-2060-4914-B3BC-43EEEF9B52CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF718267-F9B8-4D51-B92C-58F38AB97FE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF718267-F9B8-4D51-B92C-58F38AB97FE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF718267-F9B8-4D51-B92C-58F38AB97FE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF718267-F9B8-4D51-B92C-58F38AB97FE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

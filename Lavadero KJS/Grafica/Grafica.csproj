@@ -171,25 +171,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Eliminar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Eliminar.Designer.cs">
-      <DependentUpon>Eliminar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Lavado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Lavado.Designer.cs">
-      <DependentUpon>Lavado.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registrar.cs">
+    <Compile Include="VentanaFactura.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Registrar.Designer.cs">
-      <DependentUpon>Registrar.cs</DependentUpon>
     </Compile>
     <Compile Include="VentanaInicio.cs">
       <SubType>Form</SubType>
@@ -197,12 +182,6 @@
     <Compile Include="VentanaInicio.Designer.cs">
       <DependentUpon>VentanaInicio.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Eliminar.resx">
-      <DependentUpon>Eliminar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Lavado.resx">
-      <DependentUpon>Lavado.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -212,9 +191,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Registrar.resx">
-      <DependentUpon>Registrar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="VentanaInicio.resx">
       <DependentUpon>VentanaInicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,6 +207,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{55418ddd-2060-4914-b3bc-43eeef9b52cf}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{0B295BA8-BBB9-405C-B3E4-7FDD70E381FC}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logica\Logica.csproj">
+      <Project>{EF718267-F9B8-4D51-B92C-58F38AB97FE6}</Project>
+      <Name>Logica</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

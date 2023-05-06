@@ -1,0 +1,11 @@
+C:\Users\JHONATAN\Desktop\Jhonatan Hostia\ProyectoProgramacion\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Logica.dll
+C:\Users\JHONATAN\Desktop\Jhonatan Hostia\ProyectoProgramacion\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Logica.pdb
+C:\Users\JHONATAN\Desktop\Jhonatan Hostia\ProyectoProgramacion\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Datos.dll
+C:\Users\JHONATAN\Desktop\Jhonatan Hostia\ProyectoProgramacion\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Entidades.dll
+C:\Users\JHONATAN\Desktop\Jhonatan Hostia\ProyectoProgramacion\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Datos.pdb
+C:\Users\JHONATAN\Desktop\Jhonatan Hostia\ProyectoProgramacion\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Entidades.pdb
+C:\Users\JHONATAN\Desktop\Jhonatan Hostia\ProyectoProgramacion\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.csproj.AssemblyReference.cache
+C:\Users\JHONATAN\Desktop\Jhonatan Hostia\ProyectoProgramacion\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\JHONATAN\Desktop\Jhonatan Hostia\ProyectoProgramacion\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.csproj.CopyComplete
+C:\Users\JHONATAN\Desktop\Jhonatan Hostia\ProyectoProgramacion\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.dll
+C:\Users\JHONATAN\Desktop\Jhonatan Hostia\ProyectoProgramacion\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.pdb
