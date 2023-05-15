@@ -6,6 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
+
+
 namespace Datos
 {
     public class DatosUsuarios
@@ -23,6 +27,12 @@ namespace Datos
 
         public List<Usuario> ObtenerUsuarios()
         {
+            if (!File.Exists(_rutaArchivo))
+            {
+                // Si el archivo no existe, crearlo vacío
+                File.Create(_rutaArchivo).Close();
+            }
+
             List<Usuario> usuarios = new List<Usuario>();
 
             using (StreamReader sr = new StreamReader(_rutaArchivo))
@@ -45,3 +55,6 @@ namespace Datos
         }
     }
 }
+
+
+

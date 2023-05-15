@@ -5,3 +5,4 @@ Steven,232322434,24243423,JHJ 756,Renaul,24,Carro,Lavado completo
 Steven,232322434,24243423,JHJ 756,Renaul,24,Carro,Lavado completo
 Lucas,102131232,323232323,JHG 566,Yamaha,XTZ 125,Moto,Enjuague
 Juancho,33434,567565,JHG 565,Renault,Logan 2021,Carro,Lavado completo
+Kevin Ruiz,1003239144,3046459209,KJG 789,KTM ,Duke 390,Moto,Lavado completo

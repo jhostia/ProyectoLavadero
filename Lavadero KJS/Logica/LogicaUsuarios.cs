@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace Logica
 {
     public class LogicaUsuarios
@@ -30,7 +32,6 @@ namespace Logica
             }
 
             _datosUsuarios.GuardarUsuario(usuario);
-
         }
 
         public bool UsuarioExiste(string nombreUsuario)
