@@ -4,3 +4,15 @@ C:\Users\JHONATAN\Desktop\Jhonatan Hostia\ProyectoProgramacion\ProyectoLavadero\
 C:\Users\JHONATAN\Desktop\Jhonatan Hostia\ProyectoProgramacion\ProyectoLavadero\Lavadero KJS\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\JHONATAN\Desktop\Jhonatan Hostia\ProyectoProgramacion\ProyectoLavadero\Lavadero KJS\Entidades\obj\Debug\Entidades.dll
 C:\Users\JHONATAN\Desktop\Jhonatan Hostia\ProyectoProgramacion\ProyectoLavadero\Lavadero KJS\Entidades\obj\Debug\Entidades.pdb
+C:\Users\HP\Desktop\Proyecto git\ProyectoLavadero\Lavadero KJS\Entidades\bin\Debug\Entidades.dll
+C:\Users\HP\Desktop\Proyecto git\ProyectoLavadero\Lavadero KJS\Entidades\bin\Debug\Entidades.pdb
+C:\Users\HP\Desktop\Proyecto git\ProyectoLavadero\Lavadero KJS\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\Proyecto git\ProyectoLavadero\Lavadero KJS\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\Proyecto git\ProyectoLavadero\Lavadero KJS\Entidades\obj\Debug\Entidades.dll
+C:\Users\HP\Desktop\Proyecto git\ProyectoLavadero\Lavadero KJS\Entidades\obj\Debug\Entidades.pdb
+C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Entidades\bin\Debug\Entidades.dll
+C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Entidades\bin\Debug\Entidades.pdb
+C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Entidades\obj\Debug\Entidades.dll
+C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Entidades\obj\Debug\Entidades.pdb

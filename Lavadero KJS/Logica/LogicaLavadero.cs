@@ -32,5 +32,37 @@ namespace Logica
         {
             return _datosServicios.ObtenerServicios();
         }
+
+        public Servicio ObtenerServicioPorPlaca(string placa)
+        {
+            // Iterar sobre la lista de servicios y buscar el servicio con la placa especificada
+            foreach (Servicio servicio in _datosServicios.ObtenerServicios())
+            {
+                if (servicio.Vehiculo.Placa == placa)
+                {
+                    return servicio;
+                }
+            }
+
+            // Si no se encuentra ningún servicio con la placa especificada, retornar null o lanzar una excepción
+            return null;
+        }
+
+        public void ActualizarServicio(Servicio servicio)
+        {
+            if (string.IsNullOrEmpty(servicio.Vehiculo.Placa) || string.IsNullOrEmpty(servicio.Vehiculo.Marca) || string.IsNullOrEmpty(servicio.Vehiculo.Modelo)
+                || string.IsNullOrEmpty(servicio.Cliente.Nombre) || string.IsNullOrEmpty(servicio.Cliente.Documento) || string.IsNullOrEmpty(servicio.Cliente.Telefono))
+            {
+                throw new ArgumentException("Por favor complete todos los campos.");
+            }
+
+            _datosServicios.ActualizarServicio(servicio);
+        }
+
+        public void EliminarServicio(Servicio servicio)
+        {
+            _datosServicios.EliminarServicio(servicio);
+        }
     }
 }
+

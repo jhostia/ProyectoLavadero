@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Grafica
+namespace Presentacion
 {
     public class VentanaFactura : Form
     {
@@ -19,6 +19,7 @@ namespace Grafica
             string textoFactura = factura.ToString();
 
             txtFactura.Text = textoFactura;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void InitializeComponent()

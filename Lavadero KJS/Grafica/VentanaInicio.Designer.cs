@@ -1,4 +1,4 @@
-﻿namespace Grafica
+﻿namespace Presentacion
 {
     partial class VentanaInicio
     {
@@ -28,443 +28,323 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaInicio));
+            this.pnlg = new System.Windows.Forms.Panel();
+            this.pnlBien = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlIniciar = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnRegiInicio = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnIniciarSesion = new System.Windows.Forms.Button();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
-            this.btnRegiInicio = new System.Windows.Forms.Button();
-            this.btnIniciarSesion = new System.Windows.Forms.Button();
             this.pnlRegistrar = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.btnRegistrar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtReContra = new System.Windows.Forms.TextBox();
             this.txtReCorreo = new System.Windows.Forms.TextBox();
             this.txtReUsuario = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pnlIniciar = new System.Windows.Forms.Panel();
-            this.pnlDatos = new System.Windows.Forms.Panel();
-            this.txtCliente = new System.Windows.Forms.TextBox();
-            this.txtDocumento = new System.Windows.Forms.TextBox();
-            this.txtNumero = new System.Windows.Forms.TextBox();
-            this.txtMarca = new System.Windows.Forms.TextBox();
-            this.txtModelo = new System.Windows.Forms.TextBox();
-            this.txtPlaca = new System.Windows.Forms.TextBox();
-            this.comboBoxTipo = new System.Windows.Forms.ComboBox();
-            this.comboBoxLavado = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.btnAgregarServicio = new System.Windows.Forms.Button();
-            this.pnlRegistrar.SuspendLayout();
+            this.pnlg.SuspendLayout();
+            this.pnlBien.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlIniciar.SuspendLayout();
-            this.pnlDatos.SuspendLayout();
+            this.pnlRegistrar.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // pnlg
+            // 
+            this.pnlg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(170)))), ((int)(((byte)(235)))));
+            this.pnlg.Controls.Add(this.pnlBien);
+            this.pnlg.Controls.Add(this.pnlIniciar);
+            this.pnlg.Controls.Add(this.pnlRegistrar);
+            this.pnlg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlg.Location = new System.Drawing.Point(0, 0);
+            this.pnlg.Name = "pnlg";
+            this.pnlg.Size = new System.Drawing.Size(1284, 611);
+            this.pnlg.TabIndex = 9;
+            // 
+            // pnlBien
+            // 
+            this.pnlBien.Controls.Add(this.label11);
+            this.pnlBien.Controls.Add(this.pictureBox1);
+            this.pnlBien.Location = new System.Drawing.Point(450, 157);
+            this.pnlBien.Name = "pnlBien";
+            this.pnlBien.Size = new System.Drawing.Size(296, 297);
+            this.pnlBien.TabIndex = 11;
+            this.pnlBien.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(47, 41);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(194, 27);
+            this.label11.TabIndex = 28;
+            this.label11.Text = ">>Bienvenido<<";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(62, 97);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(170, 167);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pnlIniciar
+            // 
+            this.pnlIniciar.Controls.Add(this.panel2);
+            this.pnlIniciar.Controls.Add(this.panel3);
+            this.pnlIniciar.Controls.Add(this.label4);
+            this.pnlIniciar.Controls.Add(this.btnRegiInicio);
+            this.pnlIniciar.Controls.Add(this.label6);
+            this.pnlIniciar.Controls.Add(this.btnIniciarSesion);
+            this.pnlIniciar.Controls.Add(this.txtUsuario);
+            this.pnlIniciar.Controls.Add(this.txtContraseña);
+            this.pnlIniciar.Location = new System.Drawing.Point(450, 161);
+            this.pnlIniciar.Name = "pnlIniciar";
+            this.pnlIniciar.Size = new System.Drawing.Size(292, 293);
+            this.pnlIniciar.TabIndex = 10;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
+            this.panel2.Location = new System.Drawing.Point(94, 206);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(11, 42);
+            this.panel2.TabIndex = 11;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
+            this.panel3.Location = new System.Drawing.Point(71, 158);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(11, 42);
+            this.panel3.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(27, 90);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 21);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Contraseña";
+            // 
+            // btnRegiInicio
+            // 
+            this.btnRegiInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(78)))), ((int)(((byte)(107)))));
+            this.btnRegiInicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegiInicio.FlatAppearance.BorderSize = 0;
+            this.btnRegiInicio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
+            this.btnRegiInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegiInicio.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegiInicio.ForeColor = System.Drawing.Color.Transparent;
+            this.btnRegiInicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegiInicio.Location = new System.Drawing.Point(94, 206);
+            this.btnRegiInicio.Name = "btnRegiInicio";
+            this.btnRegiInicio.Size = new System.Drawing.Size(105, 42);
+            this.btnRegiInicio.TabIndex = 39;
+            this.btnRegiInicio.Text = "Registrar";
+            this.btnRegiInicio.UseVisualStyleBackColor = false;
+            this.btnRegiInicio.Click += new System.EventHandler(this.btnRegiInicio_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(42, 43);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 21);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Usuario";
+            // 
+            // btnIniciarSesion
+            // 
+            this.btnIniciarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(78)))), ((int)(((byte)(107)))));
+            this.btnIniciarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIniciarSesion.FlatAppearance.BorderSize = 0;
+            this.btnIniciarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
+            this.btnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIniciarSesion.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIniciarSesion.ForeColor = System.Drawing.Color.Transparent;
+            this.btnIniciarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIniciarSesion.Location = new System.Drawing.Point(74, 158);
+            this.btnIniciarSesion.Name = "btnIniciarSesion";
+            this.btnIniciarSesion.Size = new System.Drawing.Size(149, 42);
+            this.btnIniciarSesion.TabIndex = 38;
+            this.btnIniciarSesion.Text = "Iniciar Sesion";
+            this.btnIniciarSesion.UseVisualStyleBackColor = false;
+            this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(137, 69);
+            this.txtUsuario.Location = new System.Drawing.Point(143, 45);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtUsuario.TabIndex = 0;
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(137, 108);
+            this.txtContraseña.Location = new System.Drawing.Point(143, 92);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(100, 20);
             this.txtContraseña.TabIndex = 1;
-            // 
-            // btnRegiInicio
-            // 
-            this.btnRegiInicio.Location = new System.Drawing.Point(137, 193);
-            this.btnRegiInicio.Name = "btnRegiInicio";
-            this.btnRegiInicio.Size = new System.Drawing.Size(91, 23);
-            this.btnRegiInicio.TabIndex = 2;
-            this.btnRegiInicio.Text = "Registrar";
-            this.btnRegiInicio.UseVisualStyleBackColor = true;
-            this.btnRegiInicio.Click += new System.EventHandler(this.btnRegistrar_Click);
-            // 
-            // btnIniciarSesion
-            // 
-            this.btnIniciarSesion.Location = new System.Drawing.Point(137, 164);
-            this.btnIniciarSesion.Name = "btnIniciarSesion";
-            this.btnIniciarSesion.Size = new System.Drawing.Size(91, 23);
-            this.btnIniciarSesion.TabIndex = 3;
-            this.btnIniciarSesion.Text = "Iniciar Sesion";
-            this.btnIniciarSesion.UseVisualStyleBackColor = true;
-            this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
+            this.txtContraseña.UseSystemPasswordChar = true;
             // 
             // pnlRegistrar
             // 
+            this.pnlRegistrar.Controls.Add(this.panel4);
             this.pnlRegistrar.Controls.Add(this.btnRegistrar);
-            this.pnlRegistrar.Controls.Add(this.label3);
-            this.pnlRegistrar.Controls.Add(this.label2);
-            this.pnlRegistrar.Controls.Add(this.label1);
+            this.pnlRegistrar.Controls.Add(this.label8);
+            this.pnlRegistrar.Controls.Add(this.label7);
+            this.pnlRegistrar.Controls.Add(this.label5);
             this.pnlRegistrar.Controls.Add(this.txtReContra);
             this.pnlRegistrar.Controls.Add(this.txtReCorreo);
             this.pnlRegistrar.Controls.Add(this.txtReUsuario);
-            this.pnlRegistrar.Location = new System.Drawing.Point(12, 15);
+            this.pnlRegistrar.Location = new System.Drawing.Point(450, 161);
             this.pnlRegistrar.Name = "pnlRegistrar";
-            this.pnlRegistrar.Size = new System.Drawing.Size(377, 340);
-            this.pnlRegistrar.TabIndex = 5;
+            this.pnlRegistrar.Size = new System.Drawing.Size(290, 211);
+            this.pnlRegistrar.TabIndex = 9;
             this.pnlRegistrar.Visible = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
+            this.panel4.Location = new System.Drawing.Point(112, 158);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(11, 42);
+            this.panel4.TabIndex = 12;
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(63, 239);
+            this.btnRegistrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(78)))), ((int)(((byte)(107)))));
+            this.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegistrar.FlatAppearance.BorderSize = 0;
+            this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
+            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrar.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistrar.Location = new System.Drawing.Point(112, 158);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
-            this.btnRegistrar.TabIndex = 6;
+            this.btnRegistrar.Size = new System.Drawing.Size(101, 42);
+            this.btnRegistrar.TabIndex = 40;
             this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.UseVisualStyleBackColor = true;
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click_1);
+            this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
-            // label3
+            // label8
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(74, 170);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Contraseña: ";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(3, 113);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(110, 21);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Contraseña";
             // 
-            // label2
+            // label7
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(74, 123);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Correo: ";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(26, 66);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 21);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Correo";
             // 
-            // label1
+            // label5
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(74, 73);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Usuario: ";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(16, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 21);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Usuario";
             // 
             // txtReContra
             // 
-            this.txtReContra.Location = new System.Drawing.Point(157, 163);
+            this.txtReContra.Location = new System.Drawing.Point(112, 115);
             this.txtReContra.Name = "txtReContra";
             this.txtReContra.Size = new System.Drawing.Size(140, 20);
             this.txtReContra.TabIndex = 2;
             // 
             // txtReCorreo
             // 
-            this.txtReCorreo.Location = new System.Drawing.Point(157, 116);
+            this.txtReCorreo.Location = new System.Drawing.Point(112, 68);
             this.txtReCorreo.Name = "txtReCorreo";
             this.txtReCorreo.Size = new System.Drawing.Size(140, 20);
             this.txtReCorreo.TabIndex = 1;
             // 
             // txtReUsuario
             // 
-            this.txtReUsuario.Location = new System.Drawing.Point(157, 68);
+            this.txtReUsuario.Location = new System.Drawing.Point(112, 20);
             this.txtReUsuario.Name = "txtReUsuario";
             this.txtReUsuario.Size = new System.Drawing.Size(140, 20);
             this.txtReUsuario.TabIndex = 0;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(49, 76);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Usuario: ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(49, 111);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Contraseña: ";
-            // 
-            // pnlIniciar
-            // 
-            this.pnlIniciar.Controls.Add(this.label4);
-            this.pnlIniciar.Controls.Add(this.label5);
-            this.pnlIniciar.Controls.Add(this.txtUsuario);
-            this.pnlIniciar.Controls.Add(this.txtContraseña);
-            this.pnlIniciar.Controls.Add(this.btnRegiInicio);
-            this.pnlIniciar.Controls.Add(this.btnIniciarSesion);
-            this.pnlIniciar.Location = new System.Drawing.Point(12, 12);
-            this.pnlIniciar.Name = "pnlIniciar";
-            this.pnlIniciar.Size = new System.Drawing.Size(370, 325);
-            this.pnlIniciar.TabIndex = 8;
-            // 
-            // pnlDatos
-            // 
-            this.pnlDatos.Controls.Add(this.btnAgregarServicio);
-            this.pnlDatos.Controls.Add(this.label16);
-            this.pnlDatos.Controls.Add(this.label15);
-            this.pnlDatos.Controls.Add(this.label14);
-            this.pnlDatos.Controls.Add(this.label13);
-            this.pnlDatos.Controls.Add(this.label12);
-            this.pnlDatos.Controls.Add(this.label11);
-            this.pnlDatos.Controls.Add(this.label10);
-            this.pnlDatos.Controls.Add(this.label9);
-            this.pnlDatos.Controls.Add(this.label8);
-            this.pnlDatos.Controls.Add(this.label7);
-            this.pnlDatos.Controls.Add(this.label6);
-            this.pnlDatos.Controls.Add(this.comboBoxLavado);
-            this.pnlDatos.Controls.Add(this.comboBoxTipo);
-            this.pnlDatos.Controls.Add(this.txtPlaca);
-            this.pnlDatos.Controls.Add(this.txtModelo);
-            this.pnlDatos.Controls.Add(this.txtMarca);
-            this.pnlDatos.Controls.Add(this.txtNumero);
-            this.pnlDatos.Controls.Add(this.txtDocumento);
-            this.pnlDatos.Controls.Add(this.txtCliente);
-            this.pnlDatos.Location = new System.Drawing.Point(15, 12);
-            this.pnlDatos.Name = "pnlDatos";
-            this.pnlDatos.Size = new System.Drawing.Size(336, 443);
-            this.pnlDatos.TabIndex = 9;
-            this.pnlDatos.Visible = false;
-            // 
-            // txtCliente
-            // 
-            this.txtCliente.Location = new System.Drawing.Point(140, 63);
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(115, 20);
-            this.txtCliente.TabIndex = 0;
-            // 
-            // txtDocumento
-            // 
-            this.txtDocumento.Location = new System.Drawing.Point(140, 89);
-            this.txtDocumento.Name = "txtDocumento";
-            this.txtDocumento.Size = new System.Drawing.Size(115, 20);
-            this.txtDocumento.TabIndex = 1;
-            // 
-            // txtNumero
-            // 
-            this.txtNumero.Location = new System.Drawing.Point(140, 115);
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(115, 20);
-            this.txtNumero.TabIndex = 2;
-            // 
-            // txtMarca
-            // 
-            this.txtMarca.Location = new System.Drawing.Point(140, 190);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(115, 20);
-            this.txtMarca.TabIndex = 3;
-            // 
-            // txtModelo
-            // 
-            this.txtModelo.Location = new System.Drawing.Point(140, 216);
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(115, 20);
-            this.txtModelo.TabIndex = 4;
-            // 
-            // txtPlaca
-            // 
-            this.txtPlaca.Location = new System.Drawing.Point(140, 242);
-            this.txtPlaca.Name = "txtPlaca";
-            this.txtPlaca.Size = new System.Drawing.Size(115, 20);
-            this.txtPlaca.TabIndex = 5;
-            // 
-            // comboBoxTipo
-            // 
-            this.comboBoxTipo.FormattingEnabled = true;
-            this.comboBoxTipo.Items.AddRange(new object[] {
-            "Moto",
-            "Carro"});
-            this.comboBoxTipo.Location = new System.Drawing.Point(140, 268);
-            this.comboBoxTipo.Name = "comboBoxTipo";
-            this.comboBoxTipo.Size = new System.Drawing.Size(114, 21);
-            this.comboBoxTipo.TabIndex = 6;
-            // 
-            // comboBoxLavado
-            // 
-            this.comboBoxLavado.FormattingEnabled = true;
-            this.comboBoxLavado.Items.AddRange(new object[] {
-            "Lavado completo",
-            "Enjuague"});
-            this.comboBoxLavado.Location = new System.Drawing.Point(140, 344);
-            this.comboBoxLavado.Name = "comboBoxLavado";
-            this.comboBoxLavado.Size = new System.Drawing.Size(114, 21);
-            this.comboBoxLavado.TabIndex = 7;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(65, 66);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Nombre: ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(65, 347);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(34, 13);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Tipo: ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(65, 271);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(34, 13);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Tipo: ";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(65, 248);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(37, 13);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Placa:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(65, 193);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(40, 13);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "Marca:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(65, 92);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(68, 13);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Documento: ";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(65, 218);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(45, 13);
-            this.label12.TabIndex = 14;
-            this.label12.Text = "Modelo:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(65, 115);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(55, 13);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "Telefono: ";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(90, 25);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(92, 13);
-            this.label14.TabIndex = 16;
-            this.label14.Text = "Datos del cliente. ";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(90, 163);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(98, 13);
-            this.label15.TabIndex = 17;
-            this.label15.Text = "Datos del vehiculo.";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(90, 315);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(93, 13);
-            this.label16.TabIndex = 18;
-            this.label16.Text = "Datos del lavado. ";
-            // 
-            // btnAgregarServicio
-            // 
-            this.btnAgregarServicio.Location = new System.Drawing.Point(55, 398);
-            this.btnAgregarServicio.Name = "btnAgregarServicio";
-            this.btnAgregarServicio.Size = new System.Drawing.Size(103, 22);
-            this.btnAgregarServicio.TabIndex = 19;
-            this.btnAgregarServicio.Text = "Agregar Servicio";
-            this.btnAgregarServicio.UseVisualStyleBackColor = true;
-            this.btnAgregarServicio.Click += new System.EventHandler(this.btnAgregarServicio_Click);
             // 
             // VentanaInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 464);
-            this.Controls.Add(this.pnlDatos);
-            this.Controls.Add(this.pnlIniciar);
-            this.Controls.Add(this.pnlRegistrar);
+            this.ClientSize = new System.Drawing.Size(1284, 611);
+            this.Controls.Add(this.pnlg);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VentanaInicio";
             this.Text = "LAVADERO KJS";
-            this.pnlRegistrar.ResumeLayout(false);
-            this.pnlRegistrar.PerformLayout();
+            this.pnlg.ResumeLayout(false);
+            this.pnlBien.ResumeLayout(false);
+            this.pnlBien.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlIniciar.ResumeLayout(false);
             this.pnlIniciar.PerformLayout();
-            this.pnlDatos.ResumeLayout(false);
-            this.pnlDatos.PerformLayout();
+            this.pnlRegistrar.ResumeLayout(false);
+            this.pnlRegistrar.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.TextBox txtContraseña;
-        private System.Windows.Forms.Button btnRegiInicio;
-        private System.Windows.Forms.Button btnIniciarSesion;
+        private System.Windows.Forms.Panel pnlg;
         private System.Windows.Forms.Panel pnlRegistrar;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtReContra;
         private System.Windows.Forms.TextBox txtReCorreo;
         private System.Windows.Forms.TextBox txtReUsuario;
-        private System.Windows.Forms.Button btnRegistrar;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Panel pnlIniciar;
-        private System.Windows.Forms.Panel pnlDatos;
-        private System.Windows.Forms.TextBox txtPlaca;
-        private System.Windows.Forms.TextBox txtModelo;
-        private System.Windows.Forms.TextBox txtMarca;
-        private System.Windows.Forms.TextBox txtNumero;
-        private System.Windows.Forms.TextBox txtDocumento;
-        private System.Windows.Forms.TextBox txtCliente;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBoxLavado;
-        private System.Windows.Forms.ComboBox comboBoxTipo;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button btnAgregarServicio;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnRegiInicio;
+        private System.Windows.Forms.Button btnIniciarSesion;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.Panel pnlBien;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

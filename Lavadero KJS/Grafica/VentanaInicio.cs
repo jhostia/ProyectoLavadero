@@ -13,12 +13,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace Grafica
+namespace Presentacion
 {
+   
     public partial class VentanaInicio : Form
     {
-        private DatosServicios datosServicios; // Declarar la instancia de DatosServicios
 
+        private DatosServicios datosServicios; // Declarar la instancia de DatosServicios
+        public static int validarInicio = 0;
         public VentanaInicio()
         {
             InitializeComponent();
@@ -26,13 +28,10 @@ namespace Grafica
             // Inicializar la instancia de DatosServicios
             datosServicios = new DatosServicios();
         }
-
-
-        private void btnRegistrar_Click(object sender, EventArgs e)
+        private void btnRegiInicio_Click(object sender, EventArgs e)
         {
             pnlIniciar.Visible = false; // Ocultar el panel de inicio de sesión
             pnlRegistrar.Visible = true; // Mostrar el panel de registro
-
         }
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
@@ -48,8 +47,8 @@ namespace Grafica
                 Usuario usuario = logicaUsuarios.IniciarSesion(nombreUsuario, contrasena);
 
                 MessageBox.Show($"Bienvenido, {usuario.NombreUsuario}.");
-                pnlDatos.Visible = true;
-                pnlIniciar.Visible = false;
+                pnlBien.Visible = true;
+                VentanaInicio.validarInicio = 1;
             }
             catch (Exception ex)
             {
@@ -57,9 +56,7 @@ namespace Grafica
             }
         }
 
-        
-
-        private void btnRegistrar_Click_1(object sender, EventArgs e)
+        private void btnRegistrar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -82,37 +79,9 @@ namespace Grafica
                 MessageBox.Show($"Error al registrar usuario: {ex.Message}");
             }
 
-            pnlRegistrar.Visible = false;
             pnlIniciar.Visible = true;
+            pnlRegistrar.Visible = false;
         }
 
-        private void btnAgregarServicio_Click(object sender, EventArgs e)
-        {
-            // Obtener los datos del servicio
-            string nombreCliente = txtCliente.Text;
-            string documentoCliente = txtDocumento.Text;
-            string telefonoCliente = txtNumero.Text;
-            string marcaVehiculo = txtMarca.Text;
-            string modeloVehiculo = txtModelo.Text;
-            string placaVehiculo = txtPlaca.Text;
-            string tipoVehiculo = comboBoxTipo.SelectedItem.ToString();
-            string tipoServicio = comboBoxLavado.SelectedItem.ToString();
-
-            // Crear objetos de cliente, vehículo y servicio
-            Cliente cliente = new Cliente(documentoCliente, nombreCliente, telefonoCliente);
-            Vehiculo.TipoVehiculo tipodeVehiculo = (Vehiculo.TipoVehiculo)Enum.Parse(typeof(Vehiculo.TipoVehiculo), comboBoxTipo.Text);
-            Vehiculo vehiculo = new Vehiculo(txtMarca.Text, txtModelo.Text, txtPlaca.Text, tipodeVehiculo);
-            Servicio servicio = new Servicio(cliente, vehiculo, tipoVehiculo, tipoServicio);
-
-            // Agregar el servicio a la lista de servicios
-            datosServicios.AgregarServicio(servicio);
-
-            // Crear una nueva instancia de Factura y mostrarla en una ventana nueva
-            Factura factura = datosServicios.GenerarFactura();
-            VentanaFactura ventanaFactura = new VentanaFactura(factura.ToString());
-            ventanaFactura.Show();
-
-            MessageBox.Show("Servicio agregado correctamente.");
-        }
     }
 }

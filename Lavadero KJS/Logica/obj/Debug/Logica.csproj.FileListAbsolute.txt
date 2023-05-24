@@ -9,3 +9,25 @@ C:\Users\JHONATAN\Desktop\Jhonatan Hostia\ProyectoProgramacion\ProyectoLavadero\
 C:\Users\JHONATAN\Desktop\Jhonatan Hostia\ProyectoProgramacion\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.csproj.CopyComplete
 C:\Users\JHONATAN\Desktop\Jhonatan Hostia\ProyectoProgramacion\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.dll
 C:\Users\JHONATAN\Desktop\Jhonatan Hostia\ProyectoProgramacion\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.pdb
+C:\Users\HP\Desktop\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Logica.dll
+C:\Users\HP\Desktop\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Logica.pdb
+C:\Users\HP\Desktop\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Datos.dll
+C:\Users\HP\Desktop\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Entidades.dll
+C:\Users\HP\Desktop\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Datos.pdb
+C:\Users\HP\Desktop\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Entidades.pdb
+C:\Users\HP\Desktop\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.csproj.CopyComplete
+C:\Users\HP\Desktop\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.dll
+C:\Users\HP\Desktop\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.pdb
+C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Logica.dll
+C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Logica.pdb
+C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Datos.dll
+C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Entidades.dll
+C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Datos.pdb
+C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Entidades.pdb
+C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.csproj.AssemblyReference.cache
+C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.csproj.CopyComplete
+C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.dll
+C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.pdb
