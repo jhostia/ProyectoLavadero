@@ -214,7 +214,7 @@
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.MenuVertical);
             this.Name = "VentanaGeneral";
-            this.Text = "VentanaGeneral";
+            this.Text = "LAVADERO JK";
             this.MenuVertical.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelContenedor.ResumeLayout(false);

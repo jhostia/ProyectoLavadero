@@ -51,6 +51,8 @@
             this.txtReContra = new System.Windows.Forms.TextBox();
             this.txtReCorreo = new System.Windows.Forms.TextBox();
             this.txtReUsuario = new System.Windows.Forms.TextBox();
+            this.txtReConfirmarContra = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlg.SuspendLayout();
             this.pnlBien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,7 +63,6 @@
             // pnlg
             // 
             this.pnlg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(170)))), ((int)(((byte)(235)))));
-            this.pnlg.Controls.Add(this.pnlBien);
             this.pnlg.Controls.Add(this.pnlIniciar);
             this.pnlg.Controls.Add(this.pnlRegistrar);
             this.pnlg.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -74,27 +75,27 @@
             // 
             this.pnlBien.Controls.Add(this.label11);
             this.pnlBien.Controls.Add(this.pictureBox1);
-            this.pnlBien.Location = new System.Drawing.Point(450, 157);
+            this.pnlBien.Location = new System.Drawing.Point(3, 0);
             this.pnlBien.Name = "pnlBien";
-            this.pnlBien.Size = new System.Drawing.Size(296, 297);
+            this.pnlBien.Size = new System.Drawing.Size(372, 304);
             this.pnlBien.TabIndex = 11;
             this.pnlBien.Visible = false;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("JetBrains Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(47, 41);
+            this.label11.Location = new System.Drawing.Point(97, 40);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(194, 27);
+            this.label11.Size = new System.Drawing.Size(167, 25);
             this.label11.TabIndex = 28;
             this.label11.Text = ">>Bienvenido<<";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(62, 97);
+            this.pictureBox1.Location = new System.Drawing.Point(97, 91);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(170, 167);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -103,6 +104,7 @@
             // 
             // pnlIniciar
             // 
+            this.pnlIniciar.Controls.Add(this.pnlBien);
             this.pnlIniciar.Controls.Add(this.panel2);
             this.pnlIniciar.Controls.Add(this.panel3);
             this.pnlIniciar.Controls.Add(this.label4);
@@ -111,15 +113,15 @@
             this.pnlIniciar.Controls.Add(this.btnIniciarSesion);
             this.pnlIniciar.Controls.Add(this.txtUsuario);
             this.pnlIniciar.Controls.Add(this.txtContraseña);
-            this.pnlIniciar.Location = new System.Drawing.Point(450, 161);
+            this.pnlIniciar.Location = new System.Drawing.Point(374, 122);
             this.pnlIniciar.Name = "pnlIniciar";
-            this.pnlIniciar.Size = new System.Drawing.Size(292, 293);
+            this.pnlIniciar.Size = new System.Drawing.Size(372, 304);
             this.pnlIniciar.TabIndex = 10;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
-            this.panel2.Location = new System.Drawing.Point(94, 206);
+            this.panel2.Location = new System.Drawing.Point(135, 203);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(11, 42);
             this.panel2.TabIndex = 11;
@@ -127,7 +129,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
-            this.panel3.Location = new System.Drawing.Point(71, 158);
+            this.panel3.Location = new System.Drawing.Point(112, 155);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(11, 42);
             this.panel3.TabIndex = 6;
@@ -135,11 +137,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(27, 90);
+            this.label4.Location = new System.Drawing.Point(68, 87);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 21);
+            this.label4.Size = new System.Drawing.Size(92, 20);
             this.label4.TabIndex = 21;
             this.label4.Text = "Contraseña";
             // 
@@ -150,10 +152,10 @@
             this.btnRegiInicio.FlatAppearance.BorderSize = 0;
             this.btnRegiInicio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
             this.btnRegiInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegiInicio.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegiInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegiInicio.ForeColor = System.Drawing.Color.Transparent;
             this.btnRegiInicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegiInicio.Location = new System.Drawing.Point(94, 206);
+            this.btnRegiInicio.Location = new System.Drawing.Point(135, 203);
             this.btnRegiInicio.Name = "btnRegiInicio";
             this.btnRegiInicio.Size = new System.Drawing.Size(105, 42);
             this.btnRegiInicio.TabIndex = 39;
@@ -164,11 +166,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(42, 43);
+            this.label6.Location = new System.Drawing.Point(83, 40);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 21);
+            this.label6.Size = new System.Drawing.Size(64, 20);
             this.label6.TabIndex = 21;
             this.label6.Text = "Usuario";
             // 
@@ -179,10 +181,10 @@
             this.btnIniciarSesion.FlatAppearance.BorderSize = 0;
             this.btnIniciarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
             this.btnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIniciarSesion.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarSesion.ForeColor = System.Drawing.Color.Transparent;
             this.btnIniciarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIniciarSesion.Location = new System.Drawing.Point(74, 158);
+            this.btnIniciarSesion.Location = new System.Drawing.Point(115, 155);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(149, 42);
             this.btnIniciarSesion.TabIndex = 38;
@@ -192,14 +194,14 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(143, 45);
+            this.txtUsuario.Location = new System.Drawing.Point(184, 42);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtUsuario.TabIndex = 0;
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(143, 92);
+            this.txtContraseña.Location = new System.Drawing.Point(184, 89);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(100, 20);
             this.txtContraseña.TabIndex = 1;
@@ -207,6 +209,8 @@
             // 
             // pnlRegistrar
             // 
+            this.pnlRegistrar.Controls.Add(this.label1);
+            this.pnlRegistrar.Controls.Add(this.txtReConfirmarContra);
             this.pnlRegistrar.Controls.Add(this.panel4);
             this.pnlRegistrar.Controls.Add(this.btnRegistrar);
             this.pnlRegistrar.Controls.Add(this.label8);
@@ -215,16 +219,16 @@
             this.pnlRegistrar.Controls.Add(this.txtReContra);
             this.pnlRegistrar.Controls.Add(this.txtReCorreo);
             this.pnlRegistrar.Controls.Add(this.txtReUsuario);
-            this.pnlRegistrar.Location = new System.Drawing.Point(450, 161);
+            this.pnlRegistrar.Location = new System.Drawing.Point(377, 122);
             this.pnlRegistrar.Name = "pnlRegistrar";
-            this.pnlRegistrar.Size = new System.Drawing.Size(290, 211);
+            this.pnlRegistrar.Size = new System.Drawing.Size(372, 304);
             this.pnlRegistrar.TabIndex = 9;
             this.pnlRegistrar.Visible = false;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
-            this.panel4.Location = new System.Drawing.Point(112, 158);
+            this.panel4.Location = new System.Drawing.Point(154, 222);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(11, 42);
             this.panel4.TabIndex = 12;
@@ -236,10 +240,10 @@
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrar.Font = new System.Drawing.Font("JetBrains Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.Color.Transparent;
             this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistrar.Location = new System.Drawing.Point(112, 158);
+            this.btnRegistrar.Location = new System.Drawing.Point(163, 222);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(101, 42);
             this.btnRegistrar.TabIndex = 40;
@@ -250,56 +254,76 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(3, 113);
+            this.label8.Location = new System.Drawing.Point(27, 129);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 21);
+            this.label8.Size = new System.Drawing.Size(92, 20);
             this.label8.TabIndex = 23;
             this.label8.Text = "Contraseña";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(26, 66);
+            this.label7.Location = new System.Drawing.Point(27, 82);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 21);
+            this.label7.Size = new System.Drawing.Size(57, 20);
             this.label7.TabIndex = 22;
             this.label7.Text = "Correo";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("JetBrains Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(16, 20);
+            this.label5.Location = new System.Drawing.Point(27, 36);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 21);
+            this.label5.Size = new System.Drawing.Size(64, 20);
             this.label5.TabIndex = 21;
             this.label5.Text = "Usuario";
             // 
             // txtReContra
             // 
-            this.txtReContra.Location = new System.Drawing.Point(112, 115);
+            this.txtReContra.Location = new System.Drawing.Point(212, 129);
             this.txtReContra.Name = "txtReContra";
             this.txtReContra.Size = new System.Drawing.Size(140, 20);
             this.txtReContra.TabIndex = 2;
+            this.txtReContra.UseSystemPasswordChar = true;
             // 
             // txtReCorreo
             // 
-            this.txtReCorreo.Location = new System.Drawing.Point(112, 68);
+            this.txtReCorreo.Location = new System.Drawing.Point(212, 84);
             this.txtReCorreo.Name = "txtReCorreo";
             this.txtReCorreo.Size = new System.Drawing.Size(140, 20);
             this.txtReCorreo.TabIndex = 1;
             // 
             // txtReUsuario
             // 
-            this.txtReUsuario.Location = new System.Drawing.Point(112, 20);
+            this.txtReUsuario.Location = new System.Drawing.Point(212, 38);
             this.txtReUsuario.Name = "txtReUsuario";
             this.txtReUsuario.Size = new System.Drawing.Size(140, 20);
             this.txtReUsuario.TabIndex = 0;
+            // 
+            // txtReConfirmarContra
+            // 
+            this.txtReConfirmarContra.Location = new System.Drawing.Point(212, 175);
+            this.txtReConfirmarContra.Name = "txtReConfirmarContra";
+            this.txtReConfirmarContra.Size = new System.Drawing.Size(140, 20);
+            this.txtReConfirmarContra.TabIndex = 41;
+            this.txtReConfirmarContra.UseSystemPasswordChar = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(27, 175);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(165, 20);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Confirmar Contraseña";
             // 
             // VentanaInicio
             // 
@@ -346,5 +370,7 @@
         private System.Windows.Forms.Panel pnlBien;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtReConfirmarContra;
     }
 }

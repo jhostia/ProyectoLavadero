@@ -65,8 +65,15 @@ namespace Presentacion
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            AbrirFormHija(new VentanaInicio());
-            VentanaInicio.validarInicio = 0;
+            // Mostrar mensaje de confirmación
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas cerrar sesión?", "Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                // Cerrar la sesión
+                AbrirFormHija(new VentanaInicio());
+                VentanaInicio.validarInicio = 0;
+            }
         }
     }
 }

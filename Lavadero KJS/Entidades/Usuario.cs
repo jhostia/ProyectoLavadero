@@ -11,5 +11,6 @@ namespace Entidades
         public string NombreUsuario { get; set; }
         public string CorreoElectronico { get; set; }
         public string Contrasena { get; set; }
+        public string ConfirmarContraseña { get; set; }
     }
 }

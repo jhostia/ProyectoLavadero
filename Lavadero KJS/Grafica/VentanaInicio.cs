@@ -58,6 +58,7 @@ namespace Presentacion
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+                    
             try
             {
                 // Crear un objeto Usuario con los datos ingresados por el usuario en la interfaz
@@ -65,8 +66,17 @@ namespace Presentacion
                 {
                     NombreUsuario = txtReUsuario.Text,
                     CorreoElectronico = txtReCorreo.Text,
-                    Contrasena = txtReContra.Text
+                    Contrasena = txtReContra.Text,
+                    ConfirmarContraseña = txtReConfirmarContra.Text
                 };
+
+                // Validar que las contraseñas coincidan
+                if (txtReContra.Text != txtReConfirmarContra.Text)
+                {
+                    MessageBox.Show("Las contraseñas no coinciden. Por favor, verifica tus datos.");
+                    LimpiarCampos();
+                    return; // Salir del evento sin continuar
+                }
 
                 // Guardar el usuario usando la capa de lógica
                 LogicaUsuarios logicaUsuarios = new LogicaUsuarios();
@@ -81,6 +91,14 @@ namespace Presentacion
 
             pnlIniciar.Visible = true;
             pnlRegistrar.Visible = false;
+        }
+
+        private void LimpiarCampos()
+        {
+            txtReUsuario.Text = string.Empty;
+            txtReCorreo.Text = string.Empty;
+            txtReContra.Text = string.Empty;
+            txtReConfirmarContra.Text = string.Empty;
         }
 
     }
