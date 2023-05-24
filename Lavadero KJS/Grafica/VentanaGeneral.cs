@@ -62,5 +62,11 @@ namespace Presentacion
                 MessageBox.Show($"Por favor inicie sesion");
             }
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            AbrirFormHija(new VentanaInicio());
+            VentanaInicio.validarInicio = 0;
+        }
     }
 }
