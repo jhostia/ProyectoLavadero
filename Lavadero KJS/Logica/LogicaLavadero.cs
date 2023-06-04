@@ -25,6 +25,11 @@ namespace Logica
                 throw new ArgumentException("Por favor complete todos los campos.");
             }
 
+            if (servicio.Prioridad == 5)
+            {
+                servicio.ValorAdicional = 4000; // Aplicar valor adicional para prioridad del cliente
+            }
+
             _datosServicios.AgregarServicio(servicio);
         }
 
@@ -56,6 +61,11 @@ namespace Logica
                 throw new ArgumentException("Por favor complete todos los campos.");
             }
 
+            if (servicio.Prioridad == 5)
+            {
+                servicio.ValorAdicional = 4000; // Actualizar el valor adicional para prioridad del cliente
+            }
+
             _datosServicios.ActualizarServicio(servicio);
         }
 
@@ -64,5 +74,6 @@ namespace Logica
             _datosServicios.EliminarServicio(servicio);
         }
     }
+
 }
 

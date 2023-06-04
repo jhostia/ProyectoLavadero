@@ -14,12 +14,45 @@ namespace Datos
 
         public void AgregarServicio(Servicio servicio)
         {
-            using (StreamWriter sw = File.AppendText(_rutaArchivo))
+            if (string.IsNullOrEmpty(servicio.Vehiculo.Placa) || string.IsNullOrEmpty(servicio.Vehiculo.Marca) || string.IsNullOrEmpty(servicio.Vehiculo.Modelo)
+                || string.IsNullOrEmpty(servicio.Cliente.Nombre) || string.IsNullOrEmpty(servicio.Cliente.Documento) || string.IsNullOrEmpty(servicio.Cliente.Telefono))
             {
-                // Escribir los datos del servicio en el archivo de texto
-                sw.WriteLine($"{servicio.Cliente.Documento},{servicio.Cliente.Nombre},{servicio.Cliente.Telefono},{servicio.Vehiculo.Placa},{servicio.Vehiculo.Marca},{servicio.Vehiculo.Modelo},{servicio.Vehiculo.Tipo},{servicio.TipoServicio}");
+                throw new ArgumentException("Por favor complete todos los campos.");
+            }
+
+            // Obtener todos los servicios existentes
+            List<Servicio> servicios = ObtenerServicios();
+
+            // Verificar si el servicio ya existe por su placa
+            bool servicioExistente = servicios.Any(s => s.Vehiculo.Placa == servicio.Vehiculo.Placa);
+            if (servicioExistente)
+            {
+                throw new ArgumentException("Ya existe un servicio con esa placa.");
+            }
+
+            // Agregar el nuevo servicio a la lista
+            servicios.Add(servicio);
+
+            // Guardar todos los servicios, incluyendo el nuevo, en el archivo
+            using (StreamWriter sw = new StreamWriter(_rutaArchivo))
+            {
+                foreach (Servicio serv in servicios)
+                {
+                    string esUrgenteString = serv.EsUrgente ? "1" : "0";
+                    string valorAdicionalString = serv.ValorAdicional.ToString();
+                    string costoServicioString = serv.CalcularCosto().ToString();
+                    string costoTotalString = serv.CalcularValorTotal().ToString();
+                    string fechaServicioString = serv.ObtenerFechaServicio();
+                    string horaServicioString = serv.ObtenerHoraServicio();
+
+                    sw.WriteLine($"{serv.Cliente.Documento},{serv.Cliente.Nombre},{serv.Cliente.Telefono},{serv.Vehiculo.Placa},{serv.Vehiculo.Marca},{serv.Vehiculo.Modelo},{serv.Vehiculo.Tipo},{serv.TipoServicio},{esUrgenteString},{serv.Prioridad},{valorAdicionalString},{costoServicioString},{costoTotalString},{fechaServicioString},{horaServicioString}");
+                }
             }
         }
+
+
+
+
 
         public List<Servicio> ObtenerServicios()
         {
@@ -31,15 +64,34 @@ namespace Datos
                 while ((linea = sr.ReadLine()) != null)
                 {
                     string[] datosServicio = linea.Split(',');
-                    Cliente cliente = new Cliente(datosServicio[0], datosServicio[1], datosServicio[2]);
-                    Vehiculo vehiculo = new Vehiculo(datosServicio[4], datosServicio[5], datosServicio[3], (Vehiculo.TipoVehiculo)Enum.Parse(typeof(Vehiculo.TipoVehiculo), datosServicio[6]));
-                    Servicio servicio = new Servicio(cliente, vehiculo, datosServicio[6], datosServicio[7]);
+
+                    Cliente cliente = new Cliente(datosServicio[1], datosServicio[0], datosServicio[2]);
+                    Vehiculo vehiculo = new Vehiculo(datosServicio[3], datosServicio[4], datosServicio[5], (Vehiculo.TipoVehiculo)Enum.Parse(typeof(Vehiculo.TipoVehiculo), datosServicio[6]));
+                    string tipoServicio = datosServicio[7];
+                    string tipoVehiculo = datosServicio[6];
+
+                    bool esUrgente = datosServicio.Length > 8 && datosServicio[8] == "1"; // Comprobar si el índice existe y convertir a bool
+                    int prioridad = datosServicio.Length > 9 ? int.Parse(datosServicio[9]) : 0; // Comprobar si el índice existe y convertir a int
+                    decimal valorAdicional = datosServicio.Length > 10 ? decimal.Parse(datosServicio[10]) : 0; // Comprobar si el índice existe y convertir a decimal
+
+                    Servicio servicio = new Servicio(cliente, vehiculo, tipoVehiculo, tipoServicio)
+                    {
+                        EsUrgente = esUrgente,
+                        Prioridad = prioridad,
+                        ValorAdicional = Convert.ToInt32(valorAdicional)
+
+                    };
                     servicios.Add(servicio);
                 }
             }
 
             return servicios;
         }
+
+
+
+
+
 
         public Factura GenerarFactura()
         {
@@ -50,6 +102,9 @@ namespace Datos
             // Verificar si hay al menos un servicio registrado
             if (ultimoServicio != null)
             {
+                // Calcular el costo total sumando el costo del servicio y el valor adicional
+                decimal costoTotal = ultimoServicio.Costo + ultimoServicio.ValorAdicional;
+
                 // Crear una nueva instancia de Factura y devolverla
                 return new Factura(
                     "Lavadero KJS", // Lavadero
@@ -58,7 +113,10 @@ namespace Datos
                     ultimoServicio.Cliente.Nombre, // NombreCliente
                     "", // Direccion (en blanco)
                     "", // Telefono (en blanco)
-                    "Gracias por preferirnos" // Mensaje
+                    "Gracias por preferirnos", // Mensaje
+                    ultimoServicio.Costo, // Costo del servicio
+                    ultimoServicio.ValorAdicional, // Valor adicional
+                    costoTotal // Costo total
                 );
             }
             else
@@ -67,6 +125,7 @@ namespace Datos
                 return null;
             }
         }
+
 
         public void ActualizarServicio(Servicio servicio)
         {
@@ -83,8 +142,10 @@ namespace Datos
             {
                 if (servicios[i].Vehiculo.Placa == servicio.Vehiculo.Placa)
                 {
-                    // Actualizar el servicio con los nuevos datos
-                    servicios[i] = servicio;
+                    // Actualizar las propiedades del servicio con los nuevos valores
+                    servicios[i].EsUrgente = servicio.EsUrgente;
+                    servicios[i].Prioridad = servicio.Prioridad;
+                    servicios[i].ValorAdicional = servicio.ValorAdicional;
                     break;
                 }
             }
@@ -94,7 +155,7 @@ namespace Datos
             {
                 foreach (Servicio serv in servicios)
                 {
-                    sw.WriteLine($"{serv.Cliente.Documento},{serv.Cliente.Nombre},{serv.Cliente.Telefono},{serv.Vehiculo.Placa},{serv.Vehiculo.Marca},{serv.Vehiculo.Modelo},{serv.Vehiculo.Tipo},{serv.TipoServicio}");
+                    sw.WriteLine($"{serv.Cliente.Documento},{serv.Cliente.Nombre},{serv.Cliente.Telefono},{serv.Vehiculo.Placa},{serv.Vehiculo.Marca},{serv.Vehiculo.Modelo},{serv.Vehiculo.Tipo},{serv.TipoServicio},{serv.EsUrgente},{serv.Prioridad},{serv.ValorAdicional}");
                 }
             }
         }
@@ -118,12 +179,13 @@ namespace Datos
                 {
                     foreach (Servicio servicioActualizado in servicios)
                     {
-                        sw.WriteLine($"{servicioActualizado.Cliente.Documento},{servicioActualizado.Cliente.Nombre},{servicioActualizado.Cliente.Telefono},{servicioActualizado.Vehiculo.Placa},{servicioActualizado.Vehiculo.Marca},{servicioActualizado.Vehiculo.Modelo},{servicioActualizado.Vehiculo.Tipo},{servicioActualizado.TipoServicio}");
+                        sw.WriteLine($"{servicioActualizado.Cliente.Documento},{servicioActualizado.Cliente.Nombre},{servicioActualizado.Cliente.Telefono},{servicioActualizado.Vehiculo.Placa},{servicioActualizado.Vehiculo.Marca},{servicioActualizado.Vehiculo.Modelo},{servicioActualizado.Vehiculo.Tipo},{servicioActualizado.TipoServicio},{servicioActualizado.EsUrgente},{servicioActualizado.Prioridad},{servicioActualizado.ValorAdicional}");
                     }
                 }
             }
         }
     }
+
 }
 
 

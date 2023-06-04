@@ -15,8 +15,11 @@ namespace Entidades
         public string Direccion { get; set; }
         public string Telefono { get; set; }
         public string Mensaje { get; set; }
+        public decimal CostoServicio { get; set; }
+        public decimal ValorAdicional { get; set; }
+        public decimal CostoTotal { get; set; }
 
-        public Factura(string lavadero, DateTime fecha, Servicio servicio, string nombreCliente, string direccion, string telefono, string mensaje)
+        public Factura(string lavadero, DateTime fecha, Servicio servicio, string nombreCliente, string direccion, string telefono, string mensaje, decimal costoServicio, decimal valorAdicional, decimal costoTotal)
         {
             Lavadero = lavadero;
             Fecha = fecha;
@@ -25,6 +28,22 @@ namespace Entidades
             Direccion = direccion;
             Telefono = telefono;
             Mensaje = mensaje;
+            CostoServicio = costoServicio;
+            ValorAdicional = valorAdicional;
+            CostoTotal = costoTotal;
+        }
+
+        public Factura(string nombreCliente, string documentoCliente, string marcaVehiculo, string modeloVehiculo, string placaVehiculo,
+    string tipoServicio, decimal costoServicio, decimal valorAdicional, decimal costoTotal, string fechaServicio, string horaServicio)
+        {
+            Lavadero = "Mi Lavadero";
+            Fecha = DateTime.Now;
+            Servicio = null; // Debes asignar el objeto de tipo Servicio correspondiente
+            NombreCliente = nombreCliente;
+            Mensaje = ""; // Agrega un mensaje personalizado si es necesario
+            CostoServicio = costoServicio;
+            ValorAdicional = valorAdicional;
+            CostoTotal = costoTotal;
         }
 
 
@@ -43,7 +62,10 @@ namespace Entidades
             sb.AppendLine($"Fecha: {Fecha.ToShortDateString()}");
             sb.AppendLine($"Hora: {Fecha.ToShortTimeString()}");
             sb.AppendLine($"Tipo de servicio: {Servicio.TipoServicio}");
-            sb.AppendLine($"Costo: {Servicio.Costo:C}");
+
+            sb.AppendLine($"Costo del servicio: {Servicio.Costo:C}");
+            sb.AppendLine($"Valor adicional: {ValorAdicional:C}");
+            sb.AppendLine($"Costo total: {CostoTotal:C}");
 
             sb.AppendLine();
 
@@ -65,6 +87,6 @@ namespace Entidades
 
             return sb.ToString();
         }
-
     }
+
 }

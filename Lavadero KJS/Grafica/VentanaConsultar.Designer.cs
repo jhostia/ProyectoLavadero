@@ -58,6 +58,8 @@
             this.listBoxServicios = new System.Windows.Forms.ListBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.btnFactura = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -68,6 +70,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(170)))), ((int)(((byte)(235)))));
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.btnFactura);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.panel3);
@@ -336,10 +340,11 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
-            this.panel3.Location = new System.Drawing.Point(181, 359);
+            this.panel3.Location = new System.Drawing.Point(139, 361);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(11, 42);
             this.panel3.TabIndex = 49;
+            
             // 
             // btnEliminar
             // 
@@ -351,7 +356,7 @@
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.Transparent;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(181, 359);
+            this.btnEliminar.Location = new System.Drawing.Point(139, 360);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(135, 42);
             this.btnEliminar.TabIndex = 48;
@@ -371,7 +376,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
-            this.panel2.Location = new System.Drawing.Point(345, 359);
+            this.panel2.Location = new System.Drawing.Point(286, 360);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(11, 42);
             this.panel2.TabIndex = 44;
@@ -386,13 +391,39 @@
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.Transparent;
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(348, 359);
+            this.btnModificar.Location = new System.Drawing.Point(289, 360);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(135, 42);
             this.btnModificar.TabIndex = 43;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // btnFactura
+            // 
+            this.btnFactura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(78)))), ((int)(((byte)(107)))));
+            this.btnFactura.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFactura.FlatAppearance.BorderSize = 0;
+            this.btnFactura.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
+            this.btnFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFactura.ForeColor = System.Drawing.Color.Transparent;
+            this.btnFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFactura.Location = new System.Drawing.Point(439, 360);
+            this.btnFactura.Name = "btnFactura";
+            this.btnFactura.Size = new System.Drawing.Size(135, 42);
+            this.btnFactura.TabIndex = 58;
+            this.btnFactura.Text = "Ver Factura";
+            this.btnFactura.UseVisualStyleBackColor = false;
+            this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
+            this.panel5.Location = new System.Drawing.Point(439, 361);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(11, 42);
+            this.panel5.TabIndex = 50;
             // 
             // VentanaConsultar
             // 
@@ -449,5 +480,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnFactura;
+        private System.Windows.Forms.Panel panel5;
     }
 }
