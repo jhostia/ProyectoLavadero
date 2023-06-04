@@ -1,23 +1,24 @@
-1003239144,Pedro Acero,3046459209,Special 110,KAL 91C,AKT,Moto,Enjuague,0,0,0,5000,5000,04/06/2023,02:53 p. m.
-15171234,Kevin,3163159624,CR4 125,AVQ 55G,AKT,Moto,Lavado completo,0,0,0,8000,8000,04/06/2023,02:53 p. m.
-Juancho,12131313,13131311,NS 200,GTR 55G,Pulsar,Moto,Lavado completo,0,5,0,8000,8000,04/06/2023,02:53 p. m.
-Lucas,23234242,3234232,Flex 125,TGR 45H,AKT ,Moto,Enjuague,0,5,0,5000,5000,04/06/2023,02:53 p. m.
-SIMON,12123323,23232323,sfsfsfsf,fsfsfsfsfs,sdfsfsfs,Moto,Enjuague,0,0,0,5000,5000,04/06/2023,02:53 p. m.
-feefefef,31231321,3223232,fsfsfsfsf,sfsfsfsf,fsfsfsf,Carro,Enjuague,0,0,0,15000,15000,04/06/2023,02:53 p. m.
-dthdfhdhdfh,3243424,32323232,fseafaefa,sdfsfsfs,adadfsdfa,Moto,Enjuague,0,0,0,5000,5000,04/06/2023,02:53 p. m.
-dfdfgdgdg,2121212,223232,dggdgdg,dgdgdgdg,dfdgdgdg,Moto,Enjuague,0,0,0,5000,5000,04/06/2023,02:53 p. m.
-fhdghfg,343434,43434234,fdgdgdg,gdfgdfgd,sgdfgdfg,Moto,Enjuague,0,5,0,5000,5000,04/06/2023,02:53 p. m.
-rgdgdgdg,4242342,2423424,fsfsdfsffsf,fsfsfsfsf,fsfsdfsdf,Moto,Enjuague,0,5,0,5000,5000,04/06/2023,02:53 p. m.
-gesdfgdsgdg,442423424,24424242,gfgdfgdg,gdgdg,ffcfdgdfg,Moto,Enjuague,0,5,0,5000,5000,04/06/2023,02:53 p. m.
-gdgdgdg,2321323,324242,dggdggd,gdggdgd,fgdfgdgd,Moto,Enjuague,0,5,0,5000,5000,04/06/2023,02:53 p. m.
-fsdfsdfsfd,24434,24242,sfsfsf,fsfssf,fsdfsfs,Moto,Enjuague,0,5,0,5000,5000,04/06/2023,02:53 p. m.
-dgdfgdghd,34242344,42324234,fdgdfgd,gdgdgdg,gdsgfdg,Moto,Enjuague,0,5,0,5000,5000,04/06/2023,02:53 p. m.
-drggdgdfg,12423432,43253454,sffsfffs,dfdsfdsg,sdfsfsdf,Moto,Enjuague,0,5,0,5000,5000,04/06/2023,02:53 p. m.
-gfgdfggfd,232323,3434343,dfgdgdf,rgdgdgd,dgfgdg,Carro,Lavado completo,0,5,0,25000,25000,04/06/2023,02:53 p. m.
-luis,34234234,42434,hgfhfghfh,fghfhfghf,hfghfhf,Moto,Lavado completo,0,5,4000,8000,12000,04/06/2023,02:53 p. m.
-fdggdgdgd,453534543,43534535,fghgfhf,fghfhhh,gfhffh,Moto,Enjuague,0,5,4000,5000,9000,04/06/2023,02:53 p. m.
-fgdgdsfgd,42353,353535,gdfgdffg,tgdgdfg,fdgdgd,Carro,Lavado completo,0,0,0,25000,25000,04/06/2023,02:53 p. m.
-JUAN LOPEZ,21332131,13231312,dsdfsdfdsf,dsfssdf,sdfsdfsdf,Moto,Enjuague,0,5,4000,5000,9000,04/06/2023,02:53 p. m.
-Pedro,4343243,3424234,dfgdfgdfg,dfgdfgdfgdf,rgfgfdfg,Carro,Enjuague,0,5,4000,15000,19000,04/06/2023,02:53 p. m.
-ghdhfhfg,345455,453535,fdgdfgfdgdf,fgdfgdfg,fggdgfd,Carro,Enjuague,0,5,4000,15000,19000,04/06/2023,02:53 p. m.
-Albeiro,34244324,3432423423,fdgdfgdfgdg,fddgdgdfg,dgfgdfgdfgfdgfdg,Carro,Lavado completo,1,5,4000,25000,29000,04/06/2023,02:53 p. m.
+1003239144,Pedro Acero,3046459209,AKT,Special 110,KAL 91C,Moto,Enjuague,0,0,0,5000,5000,04/06/2023,04:51 p. m.
+15171234,Kevin,3163159624,AKT,CR4 125,AVQ 55G,Moto,Lavado completo,0,0,0,8000,8000,04/06/2023,04:51 p. m.
+Juancho,12131313,13131311,Pulsar,NS 200,GTR 55G,Moto,Lavado completo,0,5,0,8000,8000,04/06/2023,04:51 p. m.
+Lucas,23234242,3234232,AKT ,Flex 125,TGR 45H,Moto,Enjuague,0,5,0,5000,5000,04/06/2023,04:51 p. m.
+SIMON,12123323,23232323,sdfsfsfs,sfsfsfsf,fsfsfsfsfs,Moto,Enjuague,0,0,0,5000,5000,04/06/2023,04:51 p. m.
+feefefef,31231321,3223232,fsfsfsf,fsfsfsfsf,sfsfsfsf,Carro,Enjuague,0,0,0,15000,15000,04/06/2023,04:51 p. m.
+dthdfhdhdfh,3243424,32323232,adadfsdfa,fseafaefa,sdfsfsfs,Moto,Enjuague,0,0,0,5000,5000,04/06/2023,04:51 p. m.
+dfdfgdgdg,2121212,223232,dfdgdgdg,dggdgdg,dgdgdgdg,Moto,Enjuague,0,0,0,5000,5000,04/06/2023,04:51 p. m.
+fhdghfg,343434,43434234,sgdfgdfg,fdgdgdg,gdfgdfgd,Moto,Enjuague,0,5,0,5000,5000,04/06/2023,04:51 p. m.
+rgdgdgdg,4242342,2423424,fsfsdfsdf,fsfsdfsffsf,fsfsfsfsf,Moto,Enjuague,0,5,0,5000,5000,04/06/2023,04:51 p. m.
+gesdfgdsgdg,442423424,24424242,ffcfdgdfg,gfgdfgdg,gdgdg,Moto,Enjuague,0,5,0,5000,5000,04/06/2023,04:51 p. m.
+gdgdgdg,2321323,324242,fgdfgdgd,dggdggd,gdggdgd,Moto,Enjuague,0,5,0,5000,5000,04/06/2023,04:51 p. m.
+fsdfsdfsfd,24434,24242,fsdfsfs,sfsfsf,fsfssf,Moto,Enjuague,0,5,0,5000,5000,04/06/2023,04:51 p. m.
+dgdfgdghd,34242344,42324234,gdsgfdg,fdgdfgd,gdgdgdg,Moto,Enjuague,0,5,0,5000,5000,04/06/2023,04:51 p. m.
+drggdgdfg,12423432,43253454,sdfsfsdf,sffsfffs,dfdsfdsg,Moto,Enjuague,0,5,0,5000,5000,04/06/2023,04:51 p. m.
+gfgdfggfd,232323,3434343,dgfgdg,dfgdgdf,rgdgdgd,Carro,Lavado completo,0,5,0,25000,25000,04/06/2023,04:51 p. m.
+luis,34234234,42434,hfghfhf,hgfhfghfh,fghfhfghf,Moto,Lavado completo,0,5,4000,8000,12000,04/06/2023,04:51 p. m.
+fdggdgdgd,453534543,43534535,gfhffh,fghgfhf,fghfhhh,Moto,Enjuague,0,5,4000,5000,9000,04/06/2023,04:51 p. m.
+fgdgdsfgd,42353,353535,fdgdgd,gdfgdffg,tgdgdfg,Carro,Lavado completo,0,0,0,25000,25000,04/06/2023,04:51 p. m.
+JUAN LOPEZ,21332131,13231312,sdfsdfsdf,dsdfsdfdsf,dsfssdf,Moto,Enjuague,0,5,4000,5000,9000,04/06/2023,04:51 p. m.
+Pedro,4343243,3424234,rgfgfdfg,dfgdfgdfg,dfgdfgdfgdf,Carro,Enjuague,0,5,4000,15000,19000,04/06/2023,04:51 p. m.
+ghdhfhfg,345455,453535,fggdgfd,fdgdfgfdgdf,fgdfgdfg,Carro,Enjuague,0,5,4000,15000,19000,04/06/2023,04:51 p. m.
+Albeiro,34244324,3432423423,dgfgdfgdfgfdgfdg,fdgdfgdfgdg,fddgdgdfg,Carro,Lavado completo,1,5,4000,25000,29000,04/06/2023,04:51 p. m.
+Andrea,1313131313,32125464646,4353ifhnbi,Toyota,TXL,Moto,Enjuague,1,5,4000,5000,9000,04/06/2023,04:51 p. m.

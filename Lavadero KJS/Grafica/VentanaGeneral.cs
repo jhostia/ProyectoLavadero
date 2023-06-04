@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Grafica;
 
 namespace Presentacion
 {
@@ -73,6 +74,30 @@ namespace Presentacion
                 // Cerrar la sesión
                 AbrirFormHija(new VentanaInicio());
                 VentanaInicio.validarInicio = 0;
+            }
+        }
+
+        private void btnEmpleado_Click(object sender, EventArgs e)
+        {
+            if (VentanaInicio.validarInicio == 1)
+            {
+                AbrirFormHija(new VentanaEmpleados());
+            }
+            else
+            {
+                MessageBox.Show($"Por favor inicie sesion");
+            }
+        }
+
+        private void btnCitas_Click(object sender, EventArgs e)
+        {
+            if (VentanaInicio.validarInicio == 1)
+            {
+                AbrirFormHija(new Citas());
+            }
+            else
+            {
+                MessageBox.Show($"Por favor inicie sesion");
             }
         }
     }
