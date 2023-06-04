@@ -174,7 +174,10 @@ namespace Presentacion
                 // Datos del servicio
                 sb.AppendLine("Datos del servicio.");
                 sb.AppendLine($"Fecha: {fechaServicio}");
-                sb.AppendLine($"Hora: {horaServicio}");
+
+                string horaFormateada = horaServicio.Substring(0, horaServicio.LastIndexOf(" ")) + " " + horaServicio.Substring(horaServicio.LastIndexOf(" ") + 1);
+                sb.AppendLine($"Hora: {horaFormateada}");
+
                 sb.AppendLine($"Tipo de servicio: {tipoServicio}");
                 sb.AppendLine($"Costo del servicio: {costoServicio:C}");
                 sb.AppendLine($"Valor adicional: {valorAdicional:C}");
@@ -206,6 +209,10 @@ namespace Presentacion
                 MessageBox.Show("Seleccione un servicio válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+
+
 
 
 
