@@ -14,12 +14,15 @@ namespace Datos
 
         public void GuardarEmpleado(Empleado empleado)
         {
+            empleado.Disponible = true; // Establecer la disponibilidad como true
+
             using (StreamWriter sw = File.AppendText(_rutaArchivo))
             {
                 // Escribir los datos del empleado en el archivo de texto
-                sw.WriteLine($"{empleado.Id},{empleado.Nombre},{empleado.Apellido},{empleado.Telefono}");
+                sw.WriteLine($"{empleado.Id},{empleado.Nombre},{empleado.Apellido},{empleado.Telefono},{empleado.Disponible}");
             }
         }
+
 
 
         public List<Empleado> ObtenerEmpleados()

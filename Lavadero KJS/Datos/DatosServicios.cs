@@ -1,16 +1,21 @@
 ﻿using Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Datos
 {
     public class DatosServicios
     {
         private readonly string _rutaArchivo = "servicios.txt";
+        
+
+        
 
         public void AgregarServicio(Servicio servicio)
         {
@@ -184,6 +189,53 @@ namespace Datos
                 }
             }
         }
+
+        public List<Empleado> ObtenerEmpleadosDisponibles()
+        {
+            List<Empleado> empleados = new List<Empleado>();
+
+            // Leer el archivo de texto "Empleados.txt" y obtener los empleados disponibles
+            string[] lineas = File.ReadAllLines("Empleados.txt");
+
+            foreach (string linea in lineas)
+            {
+                string[] campos = linea.Split(',');
+
+                int id = int.Parse(campos[0]);
+                string nombre = campos[1];
+                bool disponible = bool.Parse(campos[2]);
+
+                if (disponible)
+                {
+                    Empleado empleado = new Empleado(id, nombre, disponible);
+                    empleados.Add(empleado);
+                }
+            }
+
+            return empleados;
+        }
+
+        public void ActualizarEmpleado(Empleado empleado)
+        {
+            string[] lineas = File.ReadAllLines("Empleados.txt");
+
+            for (int i = 0; i < lineas.Length; i++)
+            {
+                string[] campos = lineas[i].Split(',');
+
+                int id = int.Parse(campos[0]);
+
+                if (id == empleado.Id)
+                {
+                    lineas[i] = $"{empleado.Id},{empleado.Nombre},{empleado.Disponible}";
+                    break;
+                }
+            }
+
+            File.WriteAllLines("Empleados.txt", lineas);
+        }
+
+
     }
 
 }

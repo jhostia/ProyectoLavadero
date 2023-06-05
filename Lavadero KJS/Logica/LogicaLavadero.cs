@@ -11,11 +11,14 @@ namespace Logica
     public class LogicaLavadero
     {
         private readonly DatosServicios _datosServicios;
+        private readonly Random _random;
 
         public LogicaLavadero()
         {
             _datosServicios = new DatosServicios();
+            _random = new Random();
         }
+
 
         public void GuardarServicio(Servicio servicio)
         {
@@ -31,6 +34,12 @@ namespace Logica
             }
 
             _datosServicios.AgregarServicio(servicio);
+
+            // Actualizar la disponibilidad del empleado asignado
+            if (servicio.EmpleadoAsignado != null)
+            {
+                servicio.EmpleadoAsignado.Disponible = false;
+            }
         }
 
         public List<Servicio> ObtenerServicios()
@@ -73,7 +82,44 @@ namespace Logica
         {
             _datosServicios.EliminarServicio(servicio);
         }
-    }
 
+        public void AsignarEmpleado(Servicio servicio)
+        {
+            Empleado empleado = ObtenerEmpleadoDisponible();
+
+            if (empleado != null)
+            {
+                empleado.AsignarServicio(servicio);
+                ActualizarEmpleado(empleado);
+            }
+        }
+
+        private List<Empleado> ObtenerEmpleadosDisponibles()
+        {
+            return _datosServicios.ObtenerEmpleadosDisponibles();
+        }
+
+        private void ActualizarEmpleado(Empleado empleado)
+        {
+            _datosServicios.ActualizarEmpleado(empleado);
+        }
+
+        private Empleado ObtenerEmpleadoDisponible()
+        {
+            List<Empleado> empleados = ObtenerEmpleadosDisponibles();
+            int cantidadEmpleados = empleados.Count;
+
+            if (cantidadEmpleados == 0)
+            {
+                return null; // No hay empleados disponibles
+            }
+
+            int indiceAleatorio = _random.Next(cantidadEmpleados);
+            return empleados[indiceAleatorio];
+        }
+    }
 }
+
+
+
 

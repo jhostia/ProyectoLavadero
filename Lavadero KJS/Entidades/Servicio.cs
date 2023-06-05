@@ -19,6 +19,7 @@ namespace Entidades
         public decimal ValorServicio { get; set; }
         public decimal ValorTotal => CalcularValorTotal();
         public DateTime FechaServicio { get; set; } // Nueva propiedad para la fecha del servicio
+        public Empleado EmpleadoAsignado { get; set; }
 
         public Servicio(Cliente cliente, Vehiculo vehiculo, string tipoVehiculo, string tipoServicio)
         {

@@ -1,5 +1,3 @@
-8ad4a461-4e32-458b-bdf4-03b820ecb830,Jhonatan,1003239144,3046459209,Toyota,Prado TXL,TVB 546,Carro,Lavado completo,15/06/2023 7:58:38 p. m.
-cfe689a9-574c-411a-b740-e840de1c0eda,Kevin,100239144,2323232323,fdfdssf,fsdfdsfsf,fdsfdsfdsfs,Carro,Lavado completo,15/06/2023 8:11:13 p. m.
-d28054e4-4fed-4e31-8887-db38ba7c06a7,dfsdfdsfs,312313212,34242432,fsdfdsfdsf,dsfsdfdsf,sdfsdfsfs,Moto,Lavado completo,4/06/2023 8:13:11 p. m.
-a02a7c55-3fdc-43cd-9f7e-8586476dabd6,gdfgdfgd,3424242,3424242,fsfsdfsdf,dsfsdfdsfs,sfsdfdsfdsf,Moto,Moto,4/06/2023 8:28:42 p. m.
-91d2779f-8c98-414c-ab75-eeb25c2700d0,fffdfgdfgdg,213123123,42342342,rdgdfgdfg,fdgdfgdfg,fdgdfgfdg,Moto,Moto,14/06/2023 8:38:11 p. m.
+8ad4a461-4e32-458b-bdf4-03b820ecb830,Jhonatan,1003239144,3046459209,Toyota,Prado TXL,TVB 546,Carro,Carro,15/06/2023 7:58:38 p. m.
+10faca0a-8896-4b5f-8994-62f9ae05b51f,Alvaro Hostia,15171234,3006231825,AKT,CR4 125,AVQ 55G,Moto,Moto,5/06/2023 10:42:58 a. m.
+45435569-308b-48b2-b10d-d9ba1dc4529e,Karen Arrieta,49716095,3163159624,AKT,SPECIAL 110,KAL 91C,Moto,Lavado completo,21/06/2023 10:48:06 a. m.
