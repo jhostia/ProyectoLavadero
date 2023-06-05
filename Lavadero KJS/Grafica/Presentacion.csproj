@@ -212,6 +212,9 @@
     <Compile Include="VentanaInicio.Designer.cs">
       <DependentUpon>VentanaInicio.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Citas.resx">
+      <DependentUpon>Citas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
