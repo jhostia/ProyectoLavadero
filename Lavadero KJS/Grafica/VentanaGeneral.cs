@@ -37,7 +37,11 @@ namespace Presentacion
         }
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            AbrirFormHija(new VentanaInicio());
+            if (VentanaInicio.bloquearinicio == 1)
+            {
+                AbrirFormHija(new VentanaInicio());
+            }
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -66,14 +70,16 @@ namespace Presentacion
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            // Mostrar mensaje de confirmación
-            DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas cerrar sesión?", "Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (VentanaInicio.bloquearCerrar == 1) {
+                // Mostrar mensaje de confirmación
+                DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas cerrar sesión?", "Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (resultado == DialogResult.Yes)
-            {
-                // Cerrar la sesión
-                AbrirFormHija(new VentanaInicio());
-                VentanaInicio.validarInicio = 0;
+                if (resultado == DialogResult.Yes)
+                {
+                    // Cerrar la sesión
+                    AbrirFormHija(new VentanaInicio());
+                    VentanaInicio.validarInicio = 0;
+                }
             }
         }
 
@@ -94,6 +100,18 @@ namespace Presentacion
             if (VentanaInicio.validarInicio == 1)
             {
                 AbrirFormHija(new Citas());
+            }
+            else
+            {
+                MessageBox.Show($"Por favor inicie sesion");
+            }
+        }
+
+        private void btnFiltrado_Click(object sender, EventArgs e)
+        {
+            if (VentanaInicio.validarInicio == 1)
+            {
+                AbrirFormHija(new VentanaFiltrado());
             }
             else
             {

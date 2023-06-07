@@ -194,6 +194,12 @@
     <Compile Include="VentanaFactura.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="VentanaFiltrado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaFiltrado.Designer.cs">
+      <DependentUpon>VentanaFiltrado.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaGeneral.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaFactura.resx">
       <DependentUpon>VentanaFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaFiltrado.resx">
+      <DependentUpon>VentanaFiltrado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaGeneral.resx">
       <DependentUpon>VentanaGeneral.cs</DependentUpon>

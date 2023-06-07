@@ -79,6 +79,8 @@
             this.txt = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -87,6 +89,8 @@
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -102,16 +106,11 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.dateTimePicker1);
             this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.groupBox5);
             this.tabPage1.Controls.Add(this.groupBox6);
-            this.tabPage1.Controls.Add(this.txtCNom);
-            this.tabPage1.Controls.Add(this.label19);
-            this.tabPage1.Controls.Add(this.txtCCC);
-            this.tabPage1.Controls.Add(this.label20);
-            this.tabPage1.Controls.Add(this.txtCTel);
-            this.tabPage1.Controls.Add(this.label21);
             this.tabPage1.Controls.Add(this.panel3);
             this.tabPage1.Controls.Add(this.btnEditarCitas);
             this.tabPage1.Controls.Add(this.panel2);
@@ -271,7 +270,7 @@
             // 
             // txtCNom
             // 
-            this.txtCNom.Location = new System.Drawing.Point(556, 44);
+            this.txtCNom.Location = new System.Drawing.Point(104, 27);
             this.txtCNom.Name = "txtCNom";
             this.txtCNom.Size = new System.Drawing.Size(196, 20);
             this.txtCNom.TabIndex = 55;
@@ -281,7 +280,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(474, 42);
+            this.label19.Location = new System.Drawing.Point(22, 25);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(65, 20);
             this.label19.TabIndex = 58;
@@ -289,7 +288,7 @@
             // 
             // txtCCC
             // 
-            this.txtCCC.Location = new System.Drawing.Point(556, 70);
+            this.txtCCC.Location = new System.Drawing.Point(104, 53);
             this.txtCCC.Name = "txtCCC";
             this.txtCCC.Size = new System.Drawing.Size(196, 20);
             this.txtCCC.TabIndex = 56;
@@ -299,7 +298,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(474, 68);
+            this.label20.Location = new System.Drawing.Point(22, 51);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(59, 20);
             this.label20.TabIndex = 60;
@@ -307,7 +306,7 @@
             // 
             // txtCTel
             // 
-            this.txtCTel.Location = new System.Drawing.Point(556, 100);
+            this.txtCTel.Location = new System.Drawing.Point(104, 83);
             this.txtCTel.Name = "txtCTel";
             this.txtCTel.Size = new System.Drawing.Size(196, 20);
             this.txtCTel.TabIndex = 57;
@@ -317,7 +316,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(474, 98);
+            this.label21.Location = new System.Drawing.Point(22, 81);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(71, 20);
             this.label21.TabIndex = 59;
@@ -378,7 +377,7 @@
             // listBoxCitas
             // 
             this.listBoxCitas.FormattingEnabled = true;
-            this.listBoxCitas.Location = new System.Drawing.Point(140, 70);
+            this.listBoxCitas.Location = new System.Drawing.Point(135, 80);
             this.listBoxCitas.Name = "listBoxCitas";
             this.listBoxCitas.Size = new System.Drawing.Size(204, 238);
             this.listBoxCitas.TabIndex = 48;
@@ -424,16 +423,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox7);
             this.groupBox1.Controls.Add(this.dateTimePicker);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtCedula);
-            this.groupBox1.Controls.Add(this.txt);
-            this.groupBox1.Controls.Add(this.txtTelefono);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Location = new System.Drawing.Point(276, 19);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(446, 498);
@@ -587,7 +581,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(151, 66);
+            this.txtNombre.Location = new System.Drawing.Point(127, 50);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(196, 20);
             this.txtNombre.TabIndex = 0;
@@ -597,7 +591,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(80, 66);
+            this.label1.Location = new System.Drawing.Point(56, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 20);
             this.label1.TabIndex = 20;
@@ -605,7 +599,7 @@
             // 
             // txtCedula
             // 
-            this.txtCedula.Location = new System.Drawing.Point(151, 30);
+            this.txtCedula.Location = new System.Drawing.Point(127, 14);
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(196, 20);
             this.txtCedula.TabIndex = 1;
@@ -615,7 +609,7 @@
             this.txt.AutoSize = true;
             this.txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt.ForeColor = System.Drawing.Color.Black;
-            this.txt.Location = new System.Drawing.Point(81, 30);
+            this.txt.Location = new System.Drawing.Point(57, 14);
             this.txt.Name = "txt";
             this.txt.Size = new System.Drawing.Size(59, 20);
             this.txt.TabIndex = 26;
@@ -623,7 +617,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(151, 102);
+            this.txtTelefono.Location = new System.Drawing.Point(127, 86);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(196, 20);
             this.txtTelefono.TabIndex = 2;
@@ -633,11 +627,41 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(69, 100);
+            this.label6.Location = new System.Drawing.Point(45, 84);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 20);
             this.label6.TabIndex = 25;
             this.label6.Text = "Telefono";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtCTel);
+            this.groupBox2.Controls.Add(this.label21);
+            this.groupBox2.Controls.Add(this.label20);
+            this.groupBox2.Controls.Add(this.txtCCC);
+            this.groupBox2.Controls.Add(this.label19);
+            this.groupBox2.Controls.Add(this.txtCNom);
+            this.groupBox2.Location = new System.Drawing.Point(448, 15);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(322, 116);
+            this.groupBox2.TabIndex = 65;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "-_-";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.txtNombre);
+            this.groupBox7.Controls.Add(this.txt);
+            this.groupBox7.Controls.Add(this.txtCedula);
+            this.groupBox7.Controls.Add(this.txtTelefono);
+            this.groupBox7.Controls.Add(this.label6);
+            this.groupBox7.Controls.Add(this.label1);
+            this.groupBox7.Location = new System.Drawing.Point(48, 19);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(346, 117);
+            this.groupBox7.TabIndex = 47;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "-_-";
             // 
             // Citas
             // 
@@ -662,6 +686,10 @@
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -719,5 +747,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtCTel;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox7;
     }
 }

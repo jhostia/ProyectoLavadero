@@ -21,6 +21,8 @@ namespace Presentacion
 
         private DatosServicios datosServicios; // Declarar la instancia de DatosServicios
         public static int validarInicio = 0;
+        public static int bloquearinicio = 1;
+        public static int bloquearCerrar = 0;
         public VentanaInicio()
         {
             InitializeComponent();
@@ -49,6 +51,8 @@ namespace Presentacion
                 MessageBox.Show($"Bienvenido, {usuario.NombreUsuario}.");
                 pnlBien.Visible = true;
                 VentanaInicio.validarInicio = 1;
+                VentanaInicio.bloquearinicio = 0;
+                VentanaInicio.bloquearCerrar = 1;
             }
             catch (Exception ex)
             {

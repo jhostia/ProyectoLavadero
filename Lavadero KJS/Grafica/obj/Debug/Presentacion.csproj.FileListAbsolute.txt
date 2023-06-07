@@ -286,3 +286,4 @@ C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero 
 C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Grafica\obj\Debug\Grafica.pdb
 C:\Users\JHONATAN\Desktop\Proyecto Kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Grafica\obj\Debug\Grafica.VentanaEmpleados.resources
 C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Grafica\obj\Debug\Grafica.Citas.resources
+C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Grafica\obj\Debug\Grafica.VentanaFiltrado.resources

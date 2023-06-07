@@ -30,8 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaGeneral));
             this.MenuVertical = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btnFiltrado = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.btnEmpleado = new System.Windows.Forms.Button();
+            this.btnCitas = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -44,8 +48,6 @@
             this.pnlBien = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnCitas = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelContenedor.SuspendLayout();
@@ -56,6 +58,8 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(78)))), ((int)(((byte)(107)))));
+            this.MenuVertical.Controls.Add(this.panel6);
+            this.MenuVertical.Controls.Add(this.btnFiltrado);
             this.MenuVertical.Controls.Add(this.panel5);
             this.MenuVertical.Controls.Add(this.btnEmpleado);
             this.MenuVertical.Controls.Add(this.btnCitas);
@@ -74,13 +78,39 @@
             this.MenuVertical.Size = new System.Drawing.Size(202, 614);
             this.MenuVertical.TabIndex = 1;
             // 
-            // panel4
+            // panel6
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
-            this.panel4.Location = new System.Drawing.Point(0, 412);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(11, 42);
-            this.panel4.TabIndex = 16;
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
+            this.panel6.Location = new System.Drawing.Point(0, 460);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(11, 42);
+            this.panel6.TabIndex = 21;
+            // 
+            // btnFiltrado
+            // 
+            this.btnFiltrado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(78)))), ((int)(((byte)(107)))));
+            this.btnFiltrado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFiltrado.FlatAppearance.BorderSize = 0;
+            this.btnFiltrado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
+            this.btnFiltrado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltrado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltrado.ForeColor = System.Drawing.Color.Transparent;
+            this.btnFiltrado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFiltrado.Location = new System.Drawing.Point(3, 460);
+            this.btnFiltrado.Name = "btnFiltrado";
+            this.btnFiltrado.Size = new System.Drawing.Size(199, 42);
+            this.btnFiltrado.TabIndex = 20;
+            this.btnFiltrado.Text = "Filtrado";
+            this.btnFiltrado.UseVisualStyleBackColor = false;
+            this.btnFiltrado.Click += new System.EventHandler(this.btnFiltrado_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
+            this.panel5.Location = new System.Drawing.Point(0, 364);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(11, 42);
+            this.panel5.TabIndex = 19;
             // 
             // btnEmpleado
             // 
@@ -100,10 +130,36 @@
             this.btnEmpleado.UseVisualStyleBackColor = false;
             this.btnEmpleado.Click += new System.EventHandler(this.btnEmpleado_Click);
             // 
+            // btnCitas
+            // 
+            this.btnCitas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(78)))), ((int)(((byte)(107)))));
+            this.btnCitas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCitas.FlatAppearance.BorderSize = 0;
+            this.btnCitas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
+            this.btnCitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCitas.ForeColor = System.Drawing.Color.Transparent;
+            this.btnCitas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCitas.Location = new System.Drawing.Point(3, 364);
+            this.btnCitas.Name = "btnCitas";
+            this.btnCitas.Size = new System.Drawing.Size(199, 42);
+            this.btnCitas.TabIndex = 18;
+            this.btnCitas.Text = "Cita";
+            this.btnCitas.UseVisualStyleBackColor = false;
+            this.btnCitas.Click += new System.EventHandler(this.btnCitas_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
+            this.panel4.Location = new System.Drawing.Point(0, 412);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(11, 42);
+            this.panel4.TabIndex = 16;
+            // 
             // btnCerrar
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.Red;
-            this.btnCerrar.Location = new System.Drawing.Point(40, 465);
+            this.btnCerrar.Location = new System.Drawing.Point(40, 524);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(121, 35);
             this.btnCerrar.TabIndex = 13;
@@ -201,7 +257,7 @@
             // 
             // panelContenedor
             // 
-            this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(170)))), ((int)(((byte)(235)))));
+            this.panelContenedor.BackColor = System.Drawing.Color.White;
             this.panelContenedor.Controls.Add(this.pnlBien);
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(202, 0);
@@ -211,10 +267,10 @@
             // 
             // pnlBien
             // 
-            this.pnlBien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(170)))), ((int)(((byte)(235)))));
+            this.pnlBien.BackColor = System.Drawing.Color.White;
             this.pnlBien.Controls.Add(this.label11);
             this.pnlBien.Controls.Add(this.pictureBox1);
-            this.pnlBien.Location = new System.Drawing.Point(407, 199);
+            this.pnlBien.Location = new System.Drawing.Point(418, 204);
             this.pnlBien.Name = "pnlBien";
             this.pnlBien.Size = new System.Drawing.Size(296, 250);
             this.pnlBien.TabIndex = 12;
@@ -223,8 +279,8 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(44, 5);
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(73, 7);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(167, 25);
             this.label11.TabIndex = 28;
@@ -239,32 +295,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 29;
             this.pictureBox1.TabStop = false;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
-            this.panel5.Location = new System.Drawing.Point(0, 364);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(11, 42);
-            this.panel5.TabIndex = 19;
-            // 
-            // btnCitas
-            // 
-            this.btnCitas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(78)))), ((int)(((byte)(107)))));
-            this.btnCitas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCitas.FlatAppearance.BorderSize = 0;
-            this.btnCitas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(95)))), ((int)(((byte)(107)))));
-            this.btnCitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCitas.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCitas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCitas.Location = new System.Drawing.Point(3, 364);
-            this.btnCitas.Name = "btnCitas";
-            this.btnCitas.Size = new System.Drawing.Size(199, 42);
-            this.btnCitas.TabIndex = 18;
-            this.btnCitas.Text = "Cita";
-            this.btnCitas.UseVisualStyleBackColor = false;
-            this.btnCitas.Click += new System.EventHandler(this.btnCitas_Click);
             // 
             // VentanaGeneral
             // 
@@ -304,5 +334,7 @@
         private System.Windows.Forms.Button btnEmpleado;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnCitas;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button btnFiltrado;
     }
 }
