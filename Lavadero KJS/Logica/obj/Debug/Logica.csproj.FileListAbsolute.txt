@@ -31,3 +31,14 @@ C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero 
 C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.csproj.CopyComplete
 C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.dll
 C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.pdb
+C:\Users\steven\Documents\Steven\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Logica.dll
+C:\Users\steven\Documents\Steven\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Logica.pdb
+C:\Users\steven\Documents\Steven\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Datos.dll
+C:\Users\steven\Documents\Steven\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Entidades.dll
+C:\Users\steven\Documents\Steven\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Datos.pdb
+C:\Users\steven\Documents\Steven\ProyectoLavadero\Lavadero KJS\Logica\bin\Debug\Entidades.pdb
+C:\Users\steven\Documents\Steven\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.csproj.AssemblyReference.cache
+C:\Users\steven\Documents\Steven\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\steven\Documents\Steven\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.csproj.CopyComplete
+C:\Users\steven\Documents\Steven\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.dll
+C:\Users\steven\Documents\Steven\ProyectoLavadero\Lavadero KJS\Logica\obj\Debug\Logica.pdb

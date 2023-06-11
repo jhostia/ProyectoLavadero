@@ -16,3 +16,9 @@ C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero 
 C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Entidades\obj\Debug\Entidades.dll
 C:\Users\JHONATAN\Desktop\Proyecto kevin\Proyecto git\ProyectoLavadero\Lavadero KJS\Entidades\obj\Debug\Entidades.pdb
+C:\Users\steven\Documents\Steven\ProyectoLavadero\Lavadero KJS\Entidades\bin\Debug\Entidades.dll
+C:\Users\steven\Documents\Steven\ProyectoLavadero\Lavadero KJS\Entidades\bin\Debug\Entidades.pdb
+C:\Users\steven\Documents\Steven\ProyectoLavadero\Lavadero KJS\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\steven\Documents\Steven\ProyectoLavadero\Lavadero KJS\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\steven\Documents\Steven\ProyectoLavadero\Lavadero KJS\Entidades\obj\Debug\Entidades.dll
+C:\Users\steven\Documents\Steven\ProyectoLavadero\Lavadero KJS\Entidades\obj\Debug\Entidades.pdb
