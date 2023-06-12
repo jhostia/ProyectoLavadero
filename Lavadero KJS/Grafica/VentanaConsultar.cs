@@ -47,25 +47,28 @@ namespace Presentacion
 
         private void listBoxServicios_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Obtener la placa del vehículo seleccionado en el ListBox
-            string placa = listBoxServicios.SelectedItem.ToString();
+            if (listBoxServicios.SelectedItem != null)
+            {
+                // Obtener la placa del vehículo seleccionado en el ListBox
+                string placa = listBoxServicios.SelectedItem.ToString();
+                // Obtener el servicio correspondiente a la placa seleccionada
+                LogicaLavadero logicaLavadero = new LogicaLavadero();
+                Servicio servicio = logicaLavadero.ObtenerServicioPorPlaca(placa);
 
-            // Obtener el servicio correspondiente a la placa seleccionada
-            LogicaLavadero logicaLavadero = new LogicaLavadero();
-            Servicio servicio = logicaLavadero.ObtenerServicioPorPlaca(placa);
+                // Asignar el servicio seleccionado a una variable miembro de la clase VentanaConsultar
+                servicioSeleccionado = servicio;
 
-            // Asignar el servicio seleccionado a una variable miembro de la clase VentanaConsultar
-            servicioSeleccionado = servicio;
+                // Cargar los datos del servicio en los TextBox y ComboBox
+                txtCCliente.Text = servicio.Cliente.Nombre;
+                txtCDocumento.Text = servicio.Cliente.Documento;
+                txtCNumero.Text = servicio.Cliente.Telefono;
+                txtCMarca.Text = servicio.Vehiculo.Marca;
+                txtCModelo.Text = servicio.Vehiculo.Modelo;
+                txtCPlaca.Text = servicio.Vehiculo.Placa;
+                comboBoxCTipo.SelectedItem = servicio.Vehiculo.Tipo.ToString();
+                comboBoxCLavado.SelectedItem = servicio.TipoServicio;
+            }
 
-            // Cargar los datos del servicio en los TextBox y ComboBox
-            txtCCliente.Text = servicio.Cliente.Nombre;
-            txtCDocumento.Text = servicio.Cliente.Documento;
-            txtCNumero.Text = servicio.Cliente.Telefono;
-            txtCMarca.Text = servicio.Vehiculo.Marca;
-            txtCModelo.Text = servicio.Vehiculo.Modelo;
-            txtCPlaca.Text = servicio.Vehiculo.Placa;
-            comboBoxCTipo.SelectedItem = servicio.Vehiculo.Tipo.ToString();
-            comboBoxCLavado.SelectedItem = servicio.TipoServicio;
         }
 
 

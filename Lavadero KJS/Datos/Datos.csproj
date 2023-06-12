@@ -83,6 +83,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conexion.cs" />
     <Compile Include="DatosCitas.cs" />
     <Compile Include="DatosEmpleados.cs" />
     <Compile Include="DatosServicios.cs" />

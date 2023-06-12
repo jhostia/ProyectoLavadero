@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -12,10 +13,11 @@ namespace Datos
 {
     public class DatosServicios
     {
-        private readonly string _rutaArchivo = "servicios.txt";
-        
-
-        
+        private Conexion conexion;
+        public DatosServicios()
+        {
+            conexion = new Conexion();
+        }
 
         public void AgregarServicio(Servicio servicio)
         {
@@ -35,92 +37,72 @@ namespace Datos
                 throw new ArgumentException("Ya existe un servicio con esa placa.");
             }
 
-            // Agregar el nuevo servicio a la lista
-            servicios.Add(servicio);
-
             // Guardar todos los servicios, incluyendo el nuevo, en el archivo
-            using (StreamWriter sw = new StreamWriter(_rutaArchivo))
-            {
-                foreach (Servicio serv in servicios)
-                {
-                    string esUrgenteString = serv.EsUrgente ? "1" : "0";
-                    string valorAdicionalString = serv.ValorAdicional.ToString();
-                    string costoServicioString = serv.CalcularCosto().ToString();
-                    string costoTotalString = serv.CalcularValorTotal().ToString();
-                    string fechaServicioString = serv.ObtenerFechaServicio();
-                    string horaServicioString = serv.ObtenerHoraServicio();
-
-                    sw.WriteLine($"{serv.Cliente.Documento},{serv.Cliente.Nombre},{serv.Cliente.Telefono},{serv.Vehiculo.Placa},{serv.Vehiculo.Marca},{serv.Vehiculo.Modelo},{serv.Vehiculo.Tipo},{serv.TipoServicio},{esUrgenteString},{serv.Prioridad},{valorAdicionalString},{costoServicioString},{costoTotalString},{fechaServicioString},{horaServicioString}");
-                }
-            }
+            MySqlCommand comando = new MySqlCommand($"INSERT INTO servicios VALUES ('{servicio.Cliente.Nombre}', " +
+                $"'{servicio.Cliente.Documento}', '{servicio.Cliente.Telefono}', " +
+                $"'{servicio.Vehiculo.Marca}', '{servicio.Vehiculo.Modelo}', " +
+                $"'{servicio.Vehiculo.Placa}', '{servicio.Vehiculo.Tipo}', " +
+                $"'{servicio.TipoServicio}', {servicio.EsUrgente}, {servicio.Prioridad}, {servicio.ValorAdicional})", conexion.AbrirConexion());
+            comando.ExecuteNonQuery();
+            conexion.CerrarConexion();
         }
-
-
-
 
 
         public List<Servicio> ObtenerServicios()
         {
             List<Servicio> servicios = new List<Servicio>();
 
-            using (StreamReader sr = new StreamReader(_rutaArchivo))
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM servicios", conexion.AbrirConexion());
+            MySqlDataReader consulta = comando.ExecuteReader();
+
+            while (consulta.Read())
             {
-                string linea;
-                while ((linea = sr.ReadLine()) != null)
+
+                Cliente cliente = new Cliente(consulta.GetString(0), consulta.GetString(1), consulta.GetString(2));
+
+                Vehiculo vehiculo = new Vehiculo(consulta.GetString(3), consulta.GetString(4), consulta.GetString(5), 
+                    (Vehiculo.TipoVehiculo)Enum.Parse(typeof(Vehiculo.TipoVehiculo), consulta.GetString(6)));
+
+                string tipoServicio = consulta.GetString(7);
+                string tipoVehiculo = consulta.GetString(6);
+                bool esUrgente = consulta.GetBoolean(8); // Comprobar si el índice existe y convertir a bool
+                int prioridad = consulta.GetInt32(9); // Comprobar si el índice existe y convertir a int
+                decimal valorAdicional = consulta.GetDecimal(10); // Comprobar si el índice existe y convertir a decimal
+
+                Servicio servicio = new Servicio(cliente, vehiculo, tipoVehiculo, tipoServicio)
                 {
-                    string[] datosServicio = linea.Split(',');
+                    EsUrgente = esUrgente,
+                    Prioridad = prioridad,
+                    ValorAdicional = Convert.ToInt32(valorAdicional)
 
-                    Cliente cliente = new Cliente(datosServicio[1], datosServicio[0], datosServicio[2]);
-                    Vehiculo vehiculo = new Vehiculo(datosServicio[3], datosServicio[4], datosServicio[5], (Vehiculo.TipoVehiculo)Enum.Parse(typeof(Vehiculo.TipoVehiculo), datosServicio[6]));
-                    string tipoServicio = datosServicio[7];
-                    string tipoVehiculo = datosServicio[6];
-
-                    bool esUrgente = datosServicio.Length > 8 && datosServicio[8] == "1"; // Comprobar si el índice existe y convertir a bool
-                    int prioridad = datosServicio.Length > 9 ? int.Parse(datosServicio[9]) : 0; // Comprobar si el índice existe y convertir a int
-                    decimal valorAdicional = datosServicio.Length > 10 ? decimal.Parse(datosServicio[10]) : 0; // Comprobar si el índice existe y convertir a decimal
-
-                    Servicio servicio = new Servicio(cliente, vehiculo, tipoVehiculo, tipoServicio)
-                    {
-                        EsUrgente = esUrgente,
-                        Prioridad = prioridad,
-                        ValorAdicional = Convert.ToInt32(valorAdicional)
-
-                    };
-                    servicios.Add(servicio);
-                }
+                };
+                servicios.Add(servicio);
             }
+            conexion.CerrarConexion();
 
             return servicios;
         }
 
-
-
-
-
-
-        public Factura GenerarFactura()
+        public Factura GenerarFactura(Servicio servicio)
         {
-            // Obtener el último servicio agregado
-            List<Servicio> servicios = ObtenerServicios();
-            Servicio ultimoServicio = servicios.LastOrDefault();
-
+          
             // Verificar si hay al menos un servicio registrado
-            if (ultimoServicio != null)
+            if (servicio != null)
             {
                 // Calcular el costo total sumando el costo del servicio y el valor adicional
-                decimal costoTotal = ultimoServicio.Costo + ultimoServicio.ValorAdicional;
+                decimal costoTotal = servicio.Costo + servicio.ValorAdicional;
 
                 // Crear una nueva instancia de Factura y devolverla
                 return new Factura(
                     "Lavadero KJS", // Lavadero
                     DateTime.Now, // Fecha
-                    ultimoServicio, // Servicio
-                    ultimoServicio.Cliente.Nombre, // NombreCliente
+                    servicio, // Servicio
+                    servicio.Cliente.Nombre, // NombreCliente
                     "", // Direccion (en blanco)
                     "", // Telefono (en blanco)
                     "Gracias por preferirnos", // Mensaje
-                    ultimoServicio.Costo, // Costo del servicio
-                    ultimoServicio.ValorAdicional, // Valor adicional
+                    servicio.Costo, // Costo del servicio
+                    servicio.ValorAdicional, // Valor adicional
                     costoTotal // Costo total
                 );
             }
@@ -140,34 +122,20 @@ namespace Datos
                 throw new ArgumentException("Por favor complete todos los campos.");
             }
 
-            List<Servicio> servicios = ObtenerServicios();
-
-            // Buscar el servicio a actualizar por su placa
-            for (int i = 0; i < servicios.Count; i++)
-            {
-                if (servicios[i].Vehiculo.Placa == servicio.Vehiculo.Placa)
-                {
-                    // Actualizar las propiedades del servicio con los nuevos valores
-                    servicios[i].EsUrgente = servicio.EsUrgente;
-                    servicios[i].Prioridad = servicio.Prioridad;
-                    servicios[i].ValorAdicional = servicio.ValorAdicional;
-                    break;
-                }
-            }
-
-            // Guardar los servicios actualizados en el archivo
-            using (StreamWriter sw = new StreamWriter(_rutaArchivo))
-            {
-                foreach (Servicio serv in servicios)
-                {
-                    sw.WriteLine($"{serv.Cliente.Documento},{serv.Cliente.Nombre},{serv.Cliente.Telefono},{serv.Vehiculo.Placa},{serv.Vehiculo.Marca},{serv.Vehiculo.Modelo},{serv.Vehiculo.Tipo},{serv.TipoServicio},{serv.EsUrgente},{serv.Prioridad},{serv.ValorAdicional}");
-                }
-            }
+            MySqlCommand comando = new MySqlCommand($"UPDATE servicios SET nombre_cliente = '{servicio.Cliente.Nombre}', " +
+                $"documento_cliente = '{servicio.Cliente.Documento}', telefono_cliente = '{servicio.Cliente.Telefono}', " +
+                $"marca_vehiculo = '{servicio.Vehiculo.Marca}', modelo_vehiculo = '{servicio.Vehiculo.Modelo}', " +
+                $"matricula_vehiculo = '{servicio.Vehiculo.Placa}', tipo_vehiculo = '{servicio.Vehiculo.Tipo}', " +
+                $"tipo_servicio = '{servicio.TipoServicio}', urgente = {servicio.EsUrgente}, " +
+                $"prioridad = {servicio.Prioridad}, precio_adicional = {servicio.ValorAdicional} " +
+                $"WHERE matricula_vehiculo = '{servicio.Vehiculo.Placa}'", conexion.AbrirConexion());
+            comando.ExecuteNonQuery();
+            conexion.CerrarConexion();
         }
 
         public void EliminarServicio(Servicio servicio)
         {
-            // Obtener todos los servicios del archivo
+            // Obtener todos los servicios de la base
             List<Servicio> servicios = ObtenerServicios();
 
             // Buscar el servicio a eliminar
@@ -179,14 +147,10 @@ namespace Datos
                 // Remover el servicio de la lista
                 servicios.Remove(servicioAEliminar);
 
-                // Volver a escribir todos los servicios en el archivo
-                using (StreamWriter sw = new StreamWriter(_rutaArchivo))
-                {
-                    foreach (Servicio servicioActualizado in servicios)
-                    {
-                        sw.WriteLine($"{servicioActualizado.Cliente.Documento},{servicioActualizado.Cliente.Nombre},{servicioActualizado.Cliente.Telefono},{servicioActualizado.Vehiculo.Placa},{servicioActualizado.Vehiculo.Marca},{servicioActualizado.Vehiculo.Modelo},{servicioActualizado.Vehiculo.Tipo},{servicioActualizado.TipoServicio},{servicioActualizado.EsUrgente},{servicioActualizado.Prioridad},{servicioActualizado.ValorAdicional}");
-                    }
-                }
+                MySqlCommand comando = new MySqlCommand($"DELETE FROM servicios WHERE " +
+                    $"matricula_vehiculo = '{servicio.Vehiculo.Placa}'", conexion.AbrirConexion());
+                comando.ExecuteNonQuery();
+                conexion.CerrarConexion();
             }
         }
 
@@ -194,45 +158,29 @@ namespace Datos
         {
             List<Empleado> empleados = new List<Empleado>();
 
-            // Leer el archivo de texto "Empleados.txt" y obtener los empleados disponibles
-            string[] lineas = File.ReadAllLines("Empleados.txt");
-
-            foreach (string linea in lineas)
+            // Leer la base de datos y obtener los empleados disponibles
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM empleados WHERE disponible = 1", conexion.AbrirConexion());
+            MySqlDataReader consulta = comando.ExecuteReader();
+            while (consulta.Read())
             {
-                string[] campos = linea.Split(',');
+                int id = consulta.GetInt32(0);
+                string nombre = consulta.GetString(1);
+                bool disponible = consulta.GetBoolean(2);
 
-                int id = int.Parse(campos[0]);
-                string nombre = campos[1];
-                bool disponible = bool.Parse(campos[2]);
-
-                if (disponible)
-                {
-                    Empleado empleado = new Empleado(id, nombre, disponible);
-                    empleados.Add(empleado);
-                }
+                Empleado empleado = new Empleado(id, nombre, disponible);
+                empleados.Add(empleado);
             }
+            conexion.CerrarConexion();
 
             return empleados;
         }
 
         public void ActualizarEmpleado(Empleado empleado)
         {
-            string[] lineas = File.ReadAllLines("Empleados.txt");
-
-            for (int i = 0; i < lineas.Length; i++)
-            {
-                string[] campos = lineas[i].Split(',');
-
-                int id = int.Parse(campos[0]);
-
-                if (id == empleado.Id)
-                {
-                    lineas[i] = $"{empleado.Id},{empleado.Nombre},{empleado.Disponible}";
-                    break;
-                }
-            }
-
-            File.WriteAllLines("Empleados.txt", lineas);
+            MySqlCommand comando = new MySqlCommand($"UPDATE empleados SET id = {empleado.Id}, " +
+                $"nombre = '{empleado.Nombre}', apellido = '{empleado.Apellido}', " +
+                $"telefono = '{empleado.Telefono}', disponible = {empleado.Disponible}", conexion.AbrirConexion());
+            conexion.CerrarConexion();
         }
 
 

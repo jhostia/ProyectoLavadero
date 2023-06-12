@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,42 +12,37 @@ namespace Datos
 {
     public class DatosUsuarios
     {
-        private readonly string _rutaArchivo = "usuarios.txt";
+        private Conexion conexion;
+
+        public DatosUsuarios()
+        {
+            conexion = new Conexion();
+        }
 
         public void GuardarUsuario(Usuario usuario)
         {
-            using (StreamWriter sw = File.AppendText(_rutaArchivo))
-            {
-                // Escribir los datos del usuario en el archivo de texto
-                sw.WriteLine($"{usuario.NombreUsuario},{usuario.CorreoElectronico},{usuario.Contrasena}");
-            }
+            MySqlCommand comando = new MySqlCommand($"INSERT INTO usuarios (nombre, correo, pssword) VALUES( '{usuario.NombreUsuario}', '{usuario.CorreoElectronico}', '{usuario.Contrasena}');", conexion.AbrirConexion());
+            comando.ExecuteNonQuery();
+            conexion.CerrarConexion();
         }
 
         public List<Usuario> ObtenerUsuarios()
         {
-            if (!File.Exists(_rutaArchivo))
-            {
-                // Si el archivo no existe, crearlo vacío
-                File.Create(_rutaArchivo).Close();
-            }
-
             List<Usuario> usuarios = new List<Usuario>();
 
-            using (StreamReader sr = new StreamReader(_rutaArchivo))
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM usuarios", conexion.AbrirConexion());
+            MySqlDataReader consulta = comando.ExecuteReader();
+
+            while(consulta.Read())
             {
-                string linea;
-                while ((linea = sr.ReadLine()) != null)
-                {
-                    string[] datosUsuario = linea.Split(',');
-                    Usuario usuario = new Usuario
-                    {
-                        NombreUsuario = datosUsuario[0],
-                        CorreoElectronico = datosUsuario[1],
-                        Contrasena = datosUsuario[2]
-                    };
-                    usuarios.Add(usuario);
-                }
+                Usuario user = new Usuario();
+                user.NombreUsuario = consulta.GetString(1);
+                user.CorreoElectronico = consulta.GetString(2);
+                user.Contrasena = consulta.GetString(3);
+                user.ConfirmarContraseña = consulta.GetString(3);
+                usuarios.Add(user);
             }
+            conexion.CerrarConexion();
 
             return usuarios;
         }
