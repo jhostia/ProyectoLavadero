@@ -128,17 +128,20 @@ namespace Grafica
         private void listBoxEmpleados_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             // Obtener la el Id de la persona seleccionado en el ListBox
-            int Id = int.Parse(listBoxEmpleados.SelectedItem.ToString());
+            if(listBoxEmpleados.SelectedItem != null)
+            {
+                int Id = int.Parse(listBoxEmpleados.SelectedItem.ToString());
 
-            // Obtener la informacion correspondiente al Id seleccionado
-            LogicaEmpleados logicaEmpleados = new LogicaEmpleados();
-            Empleado empleado = logicaEmpleados.ObtenerEmpleadoPorId(Id);
+                // Obtener la informacion correspondiente al Id seleccionado
+                LogicaEmpleados logicaEmpleados = new LogicaEmpleados();
+                Empleado empleado = logicaEmpleados.ObtenerEmpleadoPorId(Id);
 
-            // Cargar los datos del servicio en los TextBox
-            txtCc.Text = empleado.Id.ToString();
-            txtNom.Text = empleado.Nombre;
-            txtApe.Text = empleado.Apellido;
-            txtTel.Text = empleado.Telefono;
+                // Cargar los datos del servicio en los TextBox
+                txtCc.Text = empleado.Id.ToString();
+                txtNom.Text = empleado.Nombre;
+                txtApe.Text = empleado.Apellido;
+                txtTel.Text = empleado.Telefono;
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -50,7 +51,7 @@ namespace Datos
                     string fechaServicioString = serv.ObtenerFechaServicio();
                     string horaServicioString = serv.ObtenerHoraServicio();
 
-                    sw.WriteLine($"{serv.Cliente.Documento},{serv.Cliente.Nombre},{serv.Cliente.Telefono},{serv.Vehiculo.Placa},{serv.Vehiculo.Marca},{serv.Vehiculo.Modelo},{serv.Vehiculo.Tipo},{serv.TipoServicio},{esUrgenteString},{serv.Prioridad},{valorAdicionalString},{costoServicioString},{costoTotalString},{fechaServicioString},{horaServicioString}");
+                    MySqlCommand comando = new MySqlCommand("INSERT INTO servicios");
                 }
             }
         }
