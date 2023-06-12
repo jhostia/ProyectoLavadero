@@ -38,7 +38,7 @@ namespace Presentacion
             string tipoServicio = comboBoxLavado.SelectedItem.ToString();
 
             // Crear objetos de cliente, vehículo y servicio
-            Cliente cliente = new Cliente(documentoCliente, nombreCliente, telefonoCliente);
+            Cliente cliente = new Cliente(nombreCliente, documentoCliente, telefonoCliente);
             Vehiculo.TipoVehiculo tipodeVehiculo = (Vehiculo.TipoVehiculo)Enum.Parse(typeof(Vehiculo.TipoVehiculo), comboBoxTipo.Text);
             Vehiculo vehiculo = new Vehiculo(txtMarca.Text, txtModelo.Text, txtPlaca.Text, tipodeVehiculo);
             Servicio servicio = new Servicio(cliente, vehiculo, tipoVehiculo, tipoServicio);
@@ -70,7 +70,7 @@ namespace Presentacion
             datosServicios.AgregarServicio(servicio);
 
             // Crear una nueva instancia de Factura y mostrarla en una ventana nueva
-            Factura factura = datosServicios.GenerarFactura();
+            Factura factura = datosServicios.GenerarFactura(servicio);
             VentanaFactura ventanaFactura = new VentanaFactura(factura.ToString());
             ventanaFactura.Show();
 

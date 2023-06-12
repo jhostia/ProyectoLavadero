@@ -40,7 +40,8 @@ namespace Datos
                    $"telefono_cliente = '{cita.Cliente.Telefono}', " +
                    $"marca_vehiculo = '{cita.Vehiculo.Marca}', modelo_vehiculo = '{cita.Vehiculo.Modelo}', " +
                    $"matricula_vehiculo = '{cita.Vehiculo.Placa}', " +
-                   $"tipo_vehiculo = '{cita.Vehiculo.Tipo}' ,tipo_servicio = '{cita.Vehiculo.Servicio}', fecha_cita = @fecha_cita",
+                   $"tipo_vehiculo = '{cita.Vehiculo.Tipo}' ,tipo_servicio = '{cita.Vehiculo.Servicio}', fecha_cita = @fecha_cita " +
+                   $"WHERE id = {cita.Id}",
                    conexion.AbrirConexion());
 
             comando.Parameters.AddWithValue("@fecha_cita", cita.FechaHora);
