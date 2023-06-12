@@ -12,7 +12,7 @@ namespace Datos
 {
     public class DatosUsuarios
     {
-        Conexion conexion;
+        private Conexion conexion;
 
         public DatosUsuarios()
         {
@@ -42,6 +42,7 @@ namespace Datos
                 user.ConfirmarContraseña = consulta.GetString(3);
                 usuarios.Add(user);
             }
+            conexion.CerrarConexion();
 
             return usuarios;
         }

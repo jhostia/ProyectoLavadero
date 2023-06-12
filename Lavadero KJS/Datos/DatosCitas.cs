@@ -1,27 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Entidades;
+using MySql.Data.MySqlClient;
 
 namespace Datos
 {
     public class DatosCitas
     {
-        private const string NombreArchivo = "citas.txt";
+        private Conexion conexion;
 
-        public static List<Entidades.Cita> ObtenerCitas()
+
+        public DatosCitas()
+        {
+            this.conexion = new Conexion();
+        }
+    
+        public List<Cita> ObtenerCitas()
         {
             return LeerCitas();
         }
 
-        public static void AgregarCita(Entidades.Cita cita)
+        public void AgregarCita(Cita cita)
         {
             try
             {
                 cita.Id = Guid.NewGuid().ToString(); // Generar un nuevo ID único para la cita
-                List<Entidades.Cita> citas = LeerCitas();
+                List<Cita> citas = LeerCitas();
                 citas.Add(cita);
                 GuardarCitas(citas);
             }
@@ -32,9 +36,9 @@ namespace Datos
             }
         }
 
-        public static void ModificarCita(Entidades.Cita citaModificada)
+        public void ModificarCita(Cita citaModificada)
         {
-            List<Entidades.Cita> citas = LeerCitas();
+            List<Cita> citas = LeerCitas();
 
             for (int i = 0; i < citas.Count; i++)
             {
@@ -48,7 +52,7 @@ namespace Datos
             GuardarCitas(citas);
         }
 
-        public static void EliminarCita(string idCita)
+        public void EliminarCita(string idCita)
         {
             List<Entidades.Cita> citas = LeerCitas();
             Entidades.Cita cita = citas.Find(c => c.Id == idCita);
@@ -60,62 +64,53 @@ namespace Datos
             }
         }
 
-        private static List<Entidades.Cita> LeerCitas()
+        private List<Cita> LeerCitas()
         {
-            List<Entidades.Cita> citas = new List<Entidades.Cita>();
+            List<Cita> citas = new List<Cita>();
 
-            if (File.Exists(NombreArchivo))
+
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM citas", conexion.AbrirConexion());
+            MySqlDataReader consulta = comando.ExecuteReader();
+
+            while (consulta.Read())
             {
-                string[] lineas = File.ReadAllLines(NombreArchivo);
 
-                foreach (string linea in lineas)
-                {
-                    string[] datos = linea.Split(',');
+                string id = consulta.GetString(0);
+                string nombreCliente = consulta.GetString(1);
+                string documentoCliente = Convert.ToString(consulta.GetInt32(2));
+                string telefonoCliente = Convert.ToString(consulta.GetInt32(3));
+                string marcaVehiculo = consulta.GetString(4);
+                string modeloVehiculo = consulta.GetString(5);
+                string placaVehiculo = consulta.GetString(6);
+                string tipoVehiculo = consulta.GetString(7);
+                string tipoServicio = consulta.GetString(8);
+                DateTime fechaHora = consulta.GetDateTime(9);
 
-                    if (datos.Length == 10)
-                    {
-                        string id = datos[0];
-                        string nombreCliente = datos[1];
-                        string documentoCliente = datos[2];
-                        string telefonoCliente = datos[3];
-                        string marcaVehiculo = datos[4];
-                        string modeloVehiculo = datos[5];
-                        string placaVehiculo = datos[6];
-                        string tipoVehiculo = datos[7];
-                        string tipoServicio = datos[8];
-                        DateTime fechaHora = DateTime.Parse(datos[9]);
+                Cliente cliente = new Cliente(nombreCliente, documentoCliente, telefonoCliente);
+                Vehiculo vehiculo = new Vehiculo(marcaVehiculo, modeloVehiculo, placaVehiculo, 
+                    (Vehiculo.TipoVehiculo)Enum.Parse(typeof(Vehiculo.TipoVehiculo), tipoVehiculo));
+                Cita cita = new Cita(cliente, vehiculo, tipoServicio, fechaHora, id);
 
-                        Entidades.Cliente cliente = new Entidades.Cliente(nombreCliente, documentoCliente, telefonoCliente);
-                        Entidades.Vehiculo vehiculo = new Entidades.Vehiculo(marcaVehiculo, modeloVehiculo, placaVehiculo, (Entidades.Vehiculo.TipoVehiculo)Enum.Parse(typeof(Entidades.Vehiculo.TipoVehiculo), tipoVehiculo));
-                        Entidades.Cita cita = new Entidades.Cita(cliente, vehiculo, tipoServicio, fechaHora, id);
-
-                        citas.Add(cita);
-                    }
-                }
+                citas.Add(cita);
             }
+            conexion.CerrarConexion();
 
             return citas;
         }
 
-        private static void GuardarCitas(List<Entidades.Cita> citas)
+        private void GuardarCitas(List<Cita> citas)
         {
-            try
+            foreach (Cita cita in citas)
             {
-                using (StreamWriter writer = new StreamWriter(NombreArchivo))
-                {
-                    foreach (Entidades.Cita cita in citas)
-                    {
-                        string linea = $"{cita.Id},{cita.Cliente.Nombre},{cita.Cliente.Documento},{cita.Cliente.Telefono},{cita.Vehiculo.Marca}," +
-                            $"{cita.Vehiculo.Modelo},{cita.Vehiculo.Placa},{cita.Vehiculo.Tipo},{cita.TipoServicio},{cita.FechaHora}";
+                MySqlCommand comando = new MySqlCommand($"INSERT INTO citas VALUES ('{cita.Id}', " +
+                    $"'{cita.Cliente.Nombre}', {cita.Cliente.Documento}, {cita.Cliente.Telefono}, " +
+                    $"'{cita.Vehiculo.Marca}', '{cita.Vehiculo.Modelo}', '{cita.Vehiculo.Placa}', " +
+                    $"'{cita.Vehiculo.Tipo}' ,'{cita.Vehiculo.Servicio}', @fecha_cita)", 
+                    conexion.AbrirConexion());
 
-                        writer.WriteLine(linea);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error al guardar las citas: " + ex.Message);
-                throw; // Relanzar la excepción para que se propague hacia arriba
+                comando.Parameters.AddWithValue("@fecha_cita", cita.FechaHora);
+                comando.ExecuteNonQuery();
+                conexion.CerrarConexion();
             }
         }
     }

@@ -19,7 +19,7 @@ namespace Logica
 
         public List<Cita> ObtenerCitas()
         {
-            return DatosCitas.ObtenerCitas(); // Llamar al método estático de la capa de datos para obtener las citas
+            return datosCitas.ObtenerCitas(); // Llamar al método estático de la capa de datos para obtener las citas
         }
 
 
@@ -29,19 +29,19 @@ namespace Logica
 
             Cita cita = new Cita(cliente, vehiculo, tipoServicio, fechaHora, id); // Crear una instancia de la clase Cita con los datos proporcionados
 
-            DatosCitas.AgregarCita(cita); // Llamar al método de la capa de datos para agregar la cita
+            datosCitas.AgregarCita(cita); // Llamar al método de la capa de datos para agregar la cita
         }
 
         public void ModificarCita(string id, Cliente cliente, Vehiculo vehiculo, string tipoServicio, DateTime fechaHora)
         {
             Cita cita = new Cita(cliente, vehiculo, tipoServicio, fechaHora, id); // Crear una instancia de la clase Cita con los datos proporcionados
 
-            DatosCitas.ModificarCita(cita); // Llamar al método de la capa de datos para modificar la cita
+            datosCitas.ModificarCita(cita); // Llamar al método de la capa de datos para modificar la cita
         }
 
         public void EliminarCita(string id)
         {
-            DatosCitas.EliminarCita(id); // Llamar al método de la capa de datos para eliminar la cita
+            datosCitas.EliminarCita(id); // Llamar al método de la capa de datos para eliminar la cita
         }
 
         private string GenerarIdCita()

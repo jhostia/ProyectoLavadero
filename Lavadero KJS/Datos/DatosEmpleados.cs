@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,17 +11,21 @@ namespace Datos
 {
     public class DatosEmpleados
     {
-        private readonly string _rutaArchivo = "Empleados.txt";
+        private Conexion conexion;
+
+        public DatosEmpleados()
+        {
+            conexion = new Conexion();
+        }
 
         public void GuardarEmpleado(Empleado empleado)
         {
             empleado.Disponible = true; // Establecer la disponibilidad como true
 
-            using (StreamWriter sw = File.AppendText(_rutaArchivo))
-            {
-                // Escribir los datos del empleado en el archivo de texto
-                sw.WriteLine($"{empleado.Id},{empleado.Nombre},{empleado.Apellido},{empleado.Telefono},{empleado.Disponible}");
-            }
+            MySqlCommand comando = new MySqlCommand($"INSERT INTO empleados VALUES ({empleado.Id}, '{empleado.Nombre}', " +
+                $"'{empleado.Apellido}', '{empleado.Telefono}', {empleado.Disponible})", conexion.AbrirConexion());
+            comando.ExecuteNonQuery();
+            conexion.CerrarConexion();
         }
 
 
@@ -28,81 +33,43 @@ namespace Datos
         public List<Empleado> ObtenerEmpleados()
         {
             List<Empleado> empleados = new List<Empleado>();
+            MySqlCommand comando = new MySqlCommand("SELECT * FROM empleados", conexion.AbrirConexion());
+            MySqlDataReader consulta = comando.ExecuteReader();
 
-            using (StreamReader sr = new StreamReader(_rutaArchivo))
+            while (consulta.Read())
             {
-                string linea;
-                while ((linea = sr.ReadLine()) != null)
-                {
-                    string[] datosEmpleado = linea.Split(',');
 
-                    // Convertir el primer elemento a int
-                    int id = int.Parse(datosEmpleado[0]);
-                    Empleado empleado = new Empleado(id, datosEmpleado[1], datosEmpleado[2], datosEmpleado[3]);
+                // Convertir el primer elemento a int
+                int id = consulta.GetInt32(0);
+                Empleado empleado = new Empleado(id, consulta.GetString(1), consulta.GetString(2), consulta.GetString(3));
 
-                    empleados.Add(empleado);
-                }
+                empleados.Add(empleado);
             }
+            conexion.CerrarConexion();
 
             return empleados;
         }
 
         public void EliminarEmpleado(int id)
         {
-            List<Empleado> empleados = ObtenerEmpleados();
-            Empleado empleado = empleados.FirstOrDefault(e => e.Id == id);
-            if (empleado != null)
-            {
-                empleados.Remove(empleado);
-                GuardarEmpleado(empleado);
-            }
+            MySqlCommand comando = new MySqlCommand($"DELETE FROM empleados WHERE id = {id}", conexion.AbrirConexion());
+            comando.ExecuteNonQuery();
+            conexion.CerrarConexion();
         }
         public void ActualizarEmpleado(Empleado empleado)
         {
-            List<Empleado> empleados = ObtenerEmpleados();
-            for (int i = 0; i < empleados.Count; i++)
-            {
-                if (empleados[i].Id == empleado.Id)
-                {
-                    // Actualizar el servicio con los nuevos datos
-                    empleados[i] = empleado;
-                    break;
-                }
-            }
-
-            // Guardar los servicios actualizados en el archivo
-            using (StreamWriter sw = new StreamWriter(_rutaArchivo))
-            {
-                foreach (Empleado serv in empleados)
-                {
-                    sw.WriteLine($"{serv.Id},{serv.Nombre},{serv.Apellido},{serv.Telefono}");
-                }
-            }
+            MySqlCommand comando = new MySqlCommand($"UPDATE empleados SET nombre = '{empleado.Nombre}', " +
+                $"apellido = '{empleado.Apellido}', telefono = '{empleado.Telefono}', disponible = {empleado.Disponible} " +
+                $"WHERE id = {empleado.Id}", conexion.AbrirConexion());
+            comando.ExecuteNonQuery();
+            conexion.CerrarConexion();
         }
 
         public void EliminarEmpleado(Empleado empleado)
         {
-            // Obtener todos los servicios del archivo
-            List<Empleado> empleados = ObtenerEmpleados();
-
-            // Buscar el servicio a eliminar
-            Empleado empleadoAEliminar = empleados.FirstOrDefault(s => s.Id == empleado.Id);
-
-            // Verificar si se encontró el servicio a eliminar
-            if (empleadoAEliminar != null)
-            {
-                // Remover el servicio de la lista
-                empleados.Remove(empleadoAEliminar);
-
-                // Volver a escribir todos los servicios en el archivo
-                using (StreamWriter sw = new StreamWriter(_rutaArchivo))
-                {
-                    foreach (Empleado empleadoActualizado in empleados)
-                    {
-                        sw.WriteLine($"{empleadoActualizado.Id},{empleadoActualizado.Nombre},{empleadoActualizado.Apellido},{empleadoActualizado.Telefono}");
-                    }
-                }
-            }
+            MySqlCommand comando = new MySqlCommand($"DELETE FROM empleados WHERE id = {empleado.Id}", conexion.AbrirConexion());
+            comando.ExecuteNonQuery();
+            conexion.CerrarConexion();
         }
     }
 }
