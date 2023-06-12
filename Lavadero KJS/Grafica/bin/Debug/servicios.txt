@@ -1,4 +1,0 @@
-1003239144,Pedro Acero,3046459209,AKT,Special 110,KAL 91C,Moto,Enjuague,False,0,0
-15171234,Kevin,3163159624,AKT,CR4 125,AVQ 55G,Moto,Lavado completo,False,0,0
-Juancho,12131313,13131311,Pulsar,NS 200,GTR 55G,Moto,Lavado completo,False,5,4000
-Lucas,23234242,3234232,AKT ,Flex 125,TGR 45H,Moto,Enjuague,False,5,4000
