@@ -1,4 +1,4 @@
-#Script lavadero
+# Script lavadero
 
 ```sql
 drop database if exists lavadero;
